@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C27F73B5FBFA57B0F9A6E2B /* Pods_WhatsUpBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7E9715A29E0FE611B541B0 /* Pods_WhatsUpBC.framework */; };
 		BF4C5BFC2259901F00316F7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5BFB2259901F00316F7A /* AppDelegate.swift */; };
-		BF4C5BFE2259901F00316F7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5BFD2259901F00316F7A /* ViewController.swift */; };
+		BF4C5BFE2259901F00316F7A /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5BFD2259901F00316F7A /* EntryViewController.swift */; };
 		BF4C5C012259901F00316F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5BFF2259901F00316F7A /* Main.storyboard */; };
 		BF4C5C032259902100316F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C022259902100316F7A /* Assets.xcassets */; };
 		BF4C5C062259902100316F7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C042259902100316F7A /* LaunchScreen.storyboard */; };
+		BF4C5C142259946000316F7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C132259945F00316F7A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94D081855F078A2BCAA9C41D /* Pods-WhatsUpBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsUpBC.release.xcconfig"; path = "Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC.release.xcconfig"; sourceTree = "<group>"; };
+		BA7E9715A29E0FE611B541B0 /* Pods_WhatsUpBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsUpBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C5BF82259901F00316F7A /* WhatsUpBC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsUpBC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C5BFB2259901F00316F7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF4C5BFD2259901F00316F7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF4C5BFD2259901F00316F7A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		BF4C5C002259901F00316F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF4C5C022259902100316F7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF4C5C052259902100316F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF4C5C072259902100316F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF4C5C132259945F00316F7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4977336885B14343882C804 /* Pods-WhatsUpBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsUpBC.debug.xcconfig"; path = "Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C27F73B5FBFA57B0F9A6E2B /* Pods_WhatsUpBC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		553F0E60A11B0290A1A2D049 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4977336885B14343882C804 /* Pods-WhatsUpBC.debug.xcconfig */,
+				94D081855F078A2BCAA9C41D /* Pods-WhatsUpBC.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		789A224F781C8C69D9845848 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA7E9715A29E0FE611B541B0 /* Pods_WhatsUpBC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF4C5BEF2259901F00316F7A = {
 			isa = PBXGroup;
 			children = (
 				BF4C5BFA2259901F00316F7A /* WhatsUpBC */,
 				BF4C5BF92259901F00316F7A /* Products */,
+				553F0E60A11B0290A1A2D049 /* Pods */,
+				789A224F781C8C69D9845848 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +81,12 @@
 			isa = PBXGroup;
 			children = (
 				BF4C5BFB2259901F00316F7A /* AppDelegate.swift */,
-				BF4C5BFD2259901F00316F7A /* ViewController.swift */,
+				BF4C5BFD2259901F00316F7A /* EntryViewController.swift */,
 				BF4C5BFF2259901F00316F7A /* Main.storyboard */,
 				BF4C5C022259902100316F7A /* Assets.xcassets */,
 				BF4C5C042259902100316F7A /* LaunchScreen.storyboard */,
 				BF4C5C072259902100316F7A /* Info.plist */,
+				BF4C5C132259945F00316F7A /* GoogleService-Info.plist */,
 			);
 			path = WhatsUpBC;
 			sourceTree = "<group>";
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF4C5C0A2259902100316F7A /* Build configuration list for PBXNativeTarget "WhatsUpBC" */;
 			buildPhases = (
+				98B3C37A68B77F92AD0F0391 /* [CP] Check Pods Manifest.lock */,
 				BF4C5BF42259901F00316F7A /* Sources */,
 				BF4C5BF52259901F00316F7A /* Frameworks */,
 				BF4C5BF62259901F00316F7A /* Resources */,
+				7456302E233CE265D919306E /* [CP] Embed Pods Frameworks */,
+				F874353B346EE4AD1D5E747B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4C5C062259902100316F7A /* LaunchScreen.storyboard in Resources */,
+				BF4C5C142259946000316F7A /* GoogleService-Info.plist in Resources */,
 				BF4C5C032259902100316F7A /* Assets.xcassets in Resources */,
 				BF4C5C012259901F00316F7A /* Main.storyboard in Resources */,
 			);
@@ -130,12 +161,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7456302E233CE265D919306E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98B3C37A68B77F92AD0F0391 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhatsUpBC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F874353B346EE4AD1D5E747B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF4C5BF42259901F00316F7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF4C5BFE2259901F00316F7A /* ViewController.swift in Sources */,
+				BF4C5BFE2259901F00316F7A /* EntryViewController.swift in Sources */,
 				BF4C5BFC2259901F00316F7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +430,7 @@
 		};
 		BF4C5C0B2259902100316F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4977336885B14343882C804 /* Pods-WhatsUpBC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +449,7 @@
 		};
 		BF4C5C0C2259902100316F7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94D081855F078A2BCAA9C41D /* Pods-WhatsUpBC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
