@@ -14,6 +14,10 @@
 		BF4C5C032259902100316F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C022259902100316F7A /* Assets.xcassets */; };
 		BF4C5C062259902100316F7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C042259902100316F7A /* LaunchScreen.storyboard */; };
 		BF4C5C142259946000316F7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C132259945F00316F7A /* GoogleService-Info.plist */; };
+		BF4C5C1622599F8E00316F7A /* AddNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1522599F8E00316F7A /* AddNewEventViewController.swift */; };
+		BF4C5C1C2259A1E900316F7A /* EventTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1B2259A1E900316F7A /* EventTypesViewController.swift */; };
+		BF4C5C1E2259A24800316F7A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1D2259A24800316F7A /* EventsViewController.swift */; };
+		BF4C5C202259A2CA00316F7A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1F2259A2CA00316F7A /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		BF4C5C052259902100316F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF4C5C072259902100316F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4C5C132259945F00316F7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF4C5C1522599F8E00316F7A /* AddNewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventViewController.swift; sourceTree = "<group>"; };
+		BF4C5C1B2259A1E900316F7A /* EventTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventTypesViewController.swift; path = /Users/alexkaracaoglu/Desktop/WhatsUpBC/WhatsUpBC/EventTypesViewController.swift; sourceTree = "<absolute>"; };
+		BF4C5C1D2259A24800316F7A /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		BF4C5C1F2259A2CA00316F7A /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		E4977336885B14343882C804 /* Pods-WhatsUpBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsUpBC.debug.xcconfig"; path = "Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +90,10 @@
 			children = (
 				BF4C5BFB2259901F00316F7A /* AppDelegate.swift */,
 				BF4C5BFD2259901F00316F7A /* EntryViewController.swift */,
+				BF4C5C1522599F8E00316F7A /* AddNewEventViewController.swift */,
+				BF4C5C1B2259A1E900316F7A /* EventTypesViewController.swift */,
+				BF4C5C1D2259A24800316F7A /* EventsViewController.swift */,
+				BF4C5C1F2259A2CA00316F7A /* EventDetailViewController.swift */,
 				BF4C5BFF2259901F00316F7A /* Main.storyboard */,
 				BF4C5C022259902100316F7A /* Assets.xcassets */,
 				BF4C5C042259902100316F7A /* LaunchScreen.storyboard */,
@@ -285,8 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF4C5C202259A2CA00316F7A /* EventDetailViewController.swift in Sources */,
 				BF4C5BFE2259901F00316F7A /* EntryViewController.swift in Sources */,
 				BF4C5BFC2259901F00316F7A /* AppDelegate.swift in Sources */,
+				BF4C5C1C2259A1E900316F7A /* EventTypesViewController.swift in Sources */,
+				BF4C5C1622599F8E00316F7A /* AddNewEventViewController.swift in Sources */,
+				BF4C5C1E2259A24800316F7A /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
