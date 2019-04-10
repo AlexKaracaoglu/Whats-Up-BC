@@ -29,6 +29,13 @@ class EntryViewController: UIViewController {
         signIn()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ViewRSVPS" {
+            let destination = segue.destination as! ShowRSVPSViewController
+            destination.rsvps.user = (Auth.auth().currentUser?.email)!
+        }
+    }
+    
     func signIn() {
         let providers: [FUIAuthProvider] = [
             FUIGoogleAuth(),

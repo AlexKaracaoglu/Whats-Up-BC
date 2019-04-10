@@ -11,7 +11,7 @@ class EventTypesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var tags = ["Speech", "Panel", "Workshop", "Volunteer", "Activity", "Other"]
+    var tags = ["Speech", "Panel", "Workshop", "Volunteering", "Activity", "Other"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

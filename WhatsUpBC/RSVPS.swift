@@ -1,5 +1,5 @@
 //
-//  Events.swift
+//  RSVPS.swift
 //  WhatsUpBC
 //
 //  Created by Alex Karacaoglu on 4/10/19.
@@ -9,32 +9,31 @@
 import Foundation
 import Firebase
 
-class Events {
+class RSVPS {
     
-    var eventArray: [Event] = []
+    var rsvpArray: [RSVP] = []
     var db: Firestore!
-    var tag = ""
+    var user = ""
     
     init() {
         db = Firestore.firestore()
     }
     
-    func loadEventsFromTag(completed: @escaping () -> ()) {
-        db.collection("events").document(self.tag).collection("events").addSnapshotListener { (querySnapshot, error) in
+    
+    func loadData(completed: @escaping () -> ()) {
+        db.collection("rsvps").document(self.user).collection("rsvps").addSnapshotListener { (querySnapshot, error) in
             guard error == nil else {
                 print("ERROR ADDING SNAPSHOT LISTENER")
                 return completed()
             }
-            self.eventArray = []
+            self.rsvpArray = []
             for document in querySnapshot!.documents {
-                let event = Event(dictionary: document.data())
-                event.documentID = document.documentID
-                event.tag = self.tag
-                self.eventArray.append(event)
+                let rsvp = RSVP(dictionary: document.data())
+                self.rsvpArray.append(rsvp)
             }
             completed()
         }
     }
-    
+
     
 }

@@ -22,7 +22,7 @@ class Event {
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["name": name, "host": host, "contact": contact, "location": location, "description": description, "rsvp": rsvp, "date": date]
+        return ["name": name, "host": host, "contact": contact, "location": location, "description": description, "rsvp": rsvp, "date": date, "tag": tag]
     }
     
     init(name: String, host: String, contact: String, location: String, description: String, tag: String, rsvp: Int, date: String, documentID: String) {
@@ -37,6 +37,10 @@ class Event {
         self.documentID = documentID
     }
     
+    convenience init() {
+        self.init(name: "", host: "", contact: "", location: "", description: "", tag: "", rsvp: 0, date: "", documentID: "")
+    }
+    
     convenience init(dictionary: [String: Any]) {
         let name = dictionary["name"] as! String? ?? ""
         let host = dictionary["host"] as! String? ?? ""
@@ -45,7 +49,8 @@ class Event {
         let description = dictionary["description"] as! String? ?? ""
         let rsvp = dictionary["rsvp"] as! Int? ?? 0
         let date = dictionary["date"] as! String? ?? ""
-        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: "", rsvp: rsvp, date: date, documentID: "")
+        let tag = dictionary["tag"] as! String? ?? ""
+        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, date: date, documentID: "")
     }
     
     func saveData(completed: @escaping (Bool) -> ()) {

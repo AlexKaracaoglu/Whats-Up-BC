@@ -12,6 +12,8 @@ class EventsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var images = ["star-empty", "star-filled"]
+    
     var events = Events()
     
     override func viewDidLoad() {
@@ -22,11 +24,20 @@ class EventsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        events.loadData {
+        events.loadEventsFromTag {
             self.tableView.reloadData()
         }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowEventDetail" {
+            let destination = segue.destination as! EventDetailViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.event = events.eventArray[selectedIndexPath.row]
+            destination.tag = events.tag
+        }
+    }
+    
 }
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -35,9 +46,10 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        print(events.eventArray)
-        cell.textLabel?.text = events.eventArray[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventsViewTableViewCell
+        cell.eventNameLabel.text = events.eventArray[indexPath.row].name
+        cell.eventDateLabel.text = events.eventArray[indexPath.row].date
+//        cell.rsvpImage.image = UIImage(named: images[rsvp])
         return cell
     }
     

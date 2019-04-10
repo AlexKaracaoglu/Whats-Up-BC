@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 class EventDetailViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var documentIDLabel: UILabel!
+    
+    var event = Event()
+    var tag = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nameLabel.text = event.name
+        documentIDLabel.text = tag
     }
 
+    
+    @IBAction func rsvp(_ sender: UIButton) {
+        let rsvp = RSVP(name: event.name, date: event.date, documentID: event.documentID, user: (Auth.auth().currentUser?.email)!, tag: event.tag)
+        rsvp.saveData { success in
+            print("ddid it work?")
+        }
+    }
+    
 }

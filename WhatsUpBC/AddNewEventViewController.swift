@@ -17,7 +17,6 @@ class AddNewEventViewController: UIViewController {
     @IBOutlet weak var eventTagPickerView: UIPickerView!
     @IBOutlet weak var eventDescriptionTextView: UITextView!
     @IBOutlet weak var eventLocationTextField: UITextField!
-    @IBOutlet weak var eventContactEmailTextField: UITextField!
     @IBOutlet weak var eventHostTextField: UITextField!
     @IBOutlet weak var eventNameTextField: UITextField!
     
