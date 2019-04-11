@@ -255,10 +255,6 @@
                                     <!--2037-12-31 11:00:00 +0000-->
                                 </date>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AjQ-eo-2ab">
-                                <rect key="frame" x="0.0" y="433" width="359" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mg1-bd-FrV">
                                 <rect key="frame" x="16" y="151" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -266,6 +262,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AjQ-eo-2ab">
+                                <rect key="frame" x="16" y="477" width="170" height="170"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="skL-Q8-89J">
+                                <rect key="frame" x="194" y="477" width="170" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="U5U-xx-Y2Z" appends="YES" id="3EZ-ig-VGf"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AyU-8T-EfU"/>
@@ -285,6 +293,7 @@
                     <connections>
                         <outlet property="eventDatePicker" destination="cUh-bM-3JB" id="h7n-dT-HUZ"/>
                         <outlet property="eventDescriptionTextView" destination="qL5-FU-U5J" id="VTk-U7-vDj"/>
+                        <outlet property="eventFlyerImageView" destination="skL-Q8-89J" id="m12-PQ-TWu"/>
                         <outlet property="eventHostTextField" destination="CHj-x2-WJl" id="uph-hw-qEQ"/>
                         <outlet property="eventLocationTextField" destination="Mg1-bd-FrV" id="i70-i8-SaH"/>
                         <outlet property="eventNameTextField" destination="wBw-yc-ag7" id="lQ9-vm-cc6"/>
@@ -292,6 +301,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRX-fe-ZA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="U5U-xx-Y2Z">
+                    <connections>
+                        <action selector="flyerTapped:" destination="Wyj-jz-THN" id="O4E-rV-dhw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4012" y="-494.30284857571218"/>
         </scene>
@@ -392,4 +406,7 @@
             <point key="canvasLocation" x="993" y="860"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star-empty" width="158" height="150"/>
+    </resources>
 </document>

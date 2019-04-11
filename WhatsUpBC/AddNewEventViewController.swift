@@ -19,6 +19,7 @@ class AddNewEventViewController: UIViewController {
     @IBOutlet weak var eventLocationTextField: UITextField!
     @IBOutlet weak var eventHostTextField: UITextField!
     @IBOutlet weak var eventNameTextField: UITextField!
+    var imagepicker = UIImagePickerController()
     
     var tags = ["Speech", "Panel", "Workshop", "Volunteering", "Activity", "Other"]
     
@@ -31,6 +32,8 @@ class AddNewEventViewController: UIViewController {
         
         eventTagPickerView.dataSource = self
         eventTagPickerView.delegate = self
+        
+        imagepicker.delegate = self
     }
     
     func leaveViewController() {
@@ -51,6 +54,8 @@ class AddNewEventViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
+    
+    
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         print("Event Name: \(eventNameTextField.text!)")
@@ -87,6 +92,11 @@ class AddNewEventViewController: UIViewController {
     }
     
     
+    @IBAction func flyerTapped(_ sender: UITapGestureRecognizer) {
+        
+        cameraOrLibraryAlert()
+        
+    }
 }
 
 extension AddNewEventViewController: UITextViewDelegate {
@@ -120,6 +130,50 @@ extension AddNewEventViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         eventTag = tags[row]
+    }
+    
+}
+
+extension AddNewEventViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        eventFlyerImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func cameraOrLibraryAlert() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) {_ in
+            self.accessCamera()
+        }
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) {_ in
+            self.accessLibrary()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cameraAction)
+        alertController.addAction(photoLibraryAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func accessLibrary() {
+        imagepicker.sourceType = .photoLibrary
+        present(imagepicker, animated: true, completion: nil)
+    }
+    
+    func accessCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagepicker.sourceType = .camera
+            present(imagepicker, animated: true, completion: nil)
+        }
+        else {
+            print("no camera :/")
+        }
     }
     
 }
