@@ -145,7 +145,7 @@
                                         <connections>
                                             <outlet property="eventDateLabel" destination="GJg-xq-8bg" id="hHp-nG-WQ8"/>
                                             <outlet property="eventNameLabel" destination="YRU-aO-qtG" id="lU6-mG-gZ6"/>
-                                            <segue destination="mpD-aA-PZh" kind="show" identifier="ShowEventDetail" id="6VM-6k-nKf"/>
+                                            <segue destination="mpD-aA-PZh" kind="show" id="BsY-In-aPC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -201,6 +201,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="teW-qs-ehc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tlp-FN-OZh"/>
                     <connections>
                         <outlet property="documentIDLabel" destination="HGD-KV-p4E" id="kqb-4C-Kc6"/>
                         <outlet property="nameLabel" destination="NFU-kG-pMT" id="wQj-vD-HY2"/>
@@ -209,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkT-ub-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4216.8000000000002" y="269.41529235382313"/>
+            <point key="canvasLocation" x="5356" y="330.58470764617692"/>
         </scene>
         <!--Add New Event View Controller-->
         <scene sceneID="oAS-1K-Jes">
@@ -255,13 +256,9 @@
                                 </date>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AjQ-eo-2ab">
-                                <rect key="frame" x="0.0" y="433" width="185" height="216"/>
+                                <rect key="frame" x="0.0" y="433" width="359" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="th9-SV-FUn">
-                                <rect key="frame" x="193" y="481" width="166" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mg1-bd-FrV">
                                 <rect key="frame" x="16" y="151" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -288,7 +285,6 @@
                     <connections>
                         <outlet property="eventDatePicker" destination="cUh-bM-3JB" id="h7n-dT-HUZ"/>
                         <outlet property="eventDescriptionTextView" destination="qL5-FU-U5J" id="VTk-U7-vDj"/>
-                        <outlet property="eventFlyerImageView" destination="th9-SV-FUn" id="Jgr-Rs-M3e"/>
                         <outlet property="eventHostTextField" destination="CHj-x2-WJl" id="uph-hw-qEQ"/>
                         <outlet property="eventLocationTextField" destination="Mg1-bd-FrV" id="i70-i8-SaH"/>
                         <outlet property="eventNameTextField" destination="wBw-yc-ag7" id="lQ9-vm-cc6"/>

@@ -52,5 +52,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Whats Up BC will need access to your camera to post photos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Whats Up BC will need access to your photo library to post library images.</string>
 </dict>
 </plist>
