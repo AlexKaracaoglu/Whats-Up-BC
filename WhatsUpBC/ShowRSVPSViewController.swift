@@ -24,6 +24,8 @@ class ShowRSVPSViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         rsvps.loadData {
+            self.rsvps.rsvpArray = self.rsvps.rsvpArray.filter({$0.date.toDate() > Date()})
+            self.rsvps.rsvpArray.sort(by: {$0.date < $1.date})
             self.tableView.reloadData()
         }
     }

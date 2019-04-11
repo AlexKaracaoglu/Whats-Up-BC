@@ -25,6 +25,8 @@ class EventsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         events.loadEventsFromTag {
+            self.events.eventArray = self.events.eventArray.filter({$0.date > Date()})
+            self.events.eventArray.sort(by: {$0.date < $1.date})
             self.tableView.reloadData()
         }
     }
@@ -48,7 +50,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventsViewTableViewCell
         cell.eventNameLabel.text = events.eventArray[indexPath.row].name
-        cell.eventDateLabel.text = events.eventArray[indexPath.row].date
+        cell.eventDateLabel.text = events.eventArray[indexPath.row].dateString
 //        cell.rsvpImage.image = UIImage(named: images[rsvp])
         return cell
     }

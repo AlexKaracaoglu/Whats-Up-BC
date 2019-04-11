@@ -52,7 +52,7 @@ class EventDetailViewController: UIViewController {
     }
 
     @IBAction func rsvp(_ sender: UIButton) {
-        let rsvp = RSVP(name: event.name, date: event.date, documentID: event.documentID, user: (Auth.auth().currentUser?.email)!, tag: event.tag)
+        let rsvp = RSVP(name: event.name, date: event.dateString, documentID: event.documentID, user: (Auth.auth().currentUser?.email)!, tag: event.tag)
         if rsvpButton.titleLabel?.text == "RSVP" {
             rsvp.saveData { success in
                 print("ddid it work?")

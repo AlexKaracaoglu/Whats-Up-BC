@@ -18,15 +18,20 @@ class Event {
     var description: String
     var tag: String
     var rsvp: Int
-    var date: String //FOR NOW
+    var dateString: String
     var documentID: String
     var flyerImage: UIImage
     
-    var dictionary: [String: Any] {
-        return ["name": name, "host": host, "contact": contact, "location": location, "description": description, "rsvp": rsvp, "date": date, "tag": tag]
+    var date: Date {
+        return dateString.toDate()
     }
     
-    init(name: String, host: String, contact: String, location: String, description: String, tag: String, rsvp: Int, date: String, documentID: String, flyerImage: UIImage) {
+    
+    var dictionary: [String: Any] {
+        return ["name": name, "host": host, "contact": contact, "location": location, "description": description, "rsvp": rsvp, "dateString": dateString, "tag": tag]
+    }
+    
+    init(name: String, host: String, contact: String, location: String, description: String, tag: String, rsvp: Int, dateString: String, documentID: String, flyerImage: UIImage) {
         self.name = name
         self.host = host
         self.contact = contact
@@ -34,13 +39,13 @@ class Event {
         self.description = description
         self.tag = tag
         self.rsvp = rsvp
-        self.date = date
+        self.dateString = dateString
         self.documentID = documentID
         self.flyerImage = flyerImage
     }
     
     convenience init() {
-        self.init(name: "", host: "", contact: "", location: "", description: "", tag: "", rsvp: 0, date: "", documentID: "", flyerImage: UIImage())
+        self.init(name: "", host: "", contact: "", location: "", description: "", tag: "", rsvp: 0, dateString: "", documentID: "", flyerImage: UIImage())
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -50,9 +55,9 @@ class Event {
         let location = dictionary["location"] as! String? ?? ""
         let description = dictionary["description"] as! String? ?? ""
         let rsvp = dictionary["rsvp"] as! Int? ?? 0
-        let date = dictionary["date"] as! String? ?? ""
+        let dateString = dictionary["dateString"] as! String? ?? ""
         let tag = dictionary["tag"] as! String? ?? ""
-        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, date: date, documentID: "", flyerImage: UIImage())
+        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, dateString: dateString, documentID: "", flyerImage: UIImage())
     }
     
     func addRSVP(completed: @escaping () -> ()) {

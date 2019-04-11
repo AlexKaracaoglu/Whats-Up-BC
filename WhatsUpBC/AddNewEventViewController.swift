@@ -60,9 +60,7 @@ class AddNewEventViewController: UIViewController {
         print("Event Host: \(eventHostTextField.text!)")
         print("Event Contact: \(Auth.auth().currentUser?.email ?? "Unknown")")
         print("Event Location: \(eventLocationTextField.text!)")
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EE, MMM d 'at' hh:mm aaa"
-        print("Event Date: \(formatter.string(from: eventDatePicker.date))")
+//        print("Event Date: \(formatter.string(from: eventDatePicker.date))")
         print("Event Description: \(eventDescriptionTextView.text!)")
         print("Event Tag: \(eventTag)")
         
@@ -73,7 +71,7 @@ class AddNewEventViewController: UIViewController {
                           description: eventDescriptionTextView.text!,
                           tag: eventTag,
                           rsvp: 0,
-                          date: formatter.string(from: eventDatePicker.date),
+                          dateString: eventDatePicker.date.toString(),
                           documentID: "",
                           flyerImage: eventFlyerImageView.image!)
         
