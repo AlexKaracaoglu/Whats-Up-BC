@@ -197,9 +197,13 @@
                                     <action selector="rsvp:" destination="mpD-aA-PZh" eventType="touchUpInside" id="rXh-G4-2jI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iG-WB-9Cd">
-                                <rect key="frame" x="67" y="423" width="240" height="224"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iG-WB-9Cd">
+                                <rect key="frame" x="102" y="513" width="170" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uz8-f7-Z8Y" appends="YES" id="kLw-uJ-fHj"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -214,8 +218,37 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkT-ub-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uz8-f7-Z8Y">
+                    <connections>
+                        <segue destination="zSs-8G-qTD" kind="show" identifier="ShowFlyer" id="WkZ-Rl-oZM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5356" y="330.58470764617692"/>
+        </scene>
+        <!--Flyer View Controller-->
+        <scene sceneID="IU3-ZF-OgD">
+            <objects>
+                <viewController id="zSs-8G-qTD" customClass="FlyerViewController" customModule="WhatsUpBC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NAV-Gs-4xb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-CL-D5f">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ufn-7V-27b"/>
+                    </view>
+                    <connections>
+                        <outlet property="flyerImage" destination="1CM-CL-D5f" id="Kxo-Q1-4nw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SkL-Tw-jDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6317.6000000000004" y="330.58470764617692"/>
         </scene>
         <!--Add New Event View Controller-->
         <scene sceneID="oAS-1K-Jes">

@@ -41,6 +41,13 @@ class EventDetailViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowFlyer" {
+            let destination = segue.destination as! FlyerViewController
+            destination.flyer = eventFlyerImageView.image!
+        }
+    }
+    
     func deleteFromRSVPList(element: String) {
         rsvpList = rsvpList.filter() { $0 != element }
     }
