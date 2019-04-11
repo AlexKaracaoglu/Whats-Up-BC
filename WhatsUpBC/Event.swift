@@ -20,12 +20,13 @@ class Event {
     var rsvp: Int
     var date: String //FOR NOW
     var documentID: String
+    var flyerImage: UIImage
     
     var dictionary: [String: Any] {
         return ["name": name, "host": host, "contact": contact, "location": location, "description": description, "rsvp": rsvp, "date": date, "tag": tag]
     }
     
-    init(name: String, host: String, contact: String, location: String, description: String, tag: String, rsvp: Int, date: String, documentID: String) {
+    init(name: String, host: String, contact: String, location: String, description: String, tag: String, rsvp: Int, date: String, documentID: String, flyerImage: UIImage) {
         self.name = name
         self.host = host
         self.contact = contact
@@ -35,10 +36,11 @@ class Event {
         self.rsvp = rsvp
         self.date = date
         self.documentID = documentID
+        self.flyerImage = flyerImage
     }
     
     convenience init() {
-        self.init(name: "", host: "", contact: "", location: "", description: "", tag: "", rsvp: 0, date: "", documentID: "")
+        self.init(name: "", host: "", contact: "", location: "", description: "", tag: "", rsvp: 0, date: "", documentID: "", flyerImage: UIImage())
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -50,7 +52,7 @@ class Event {
         let rsvp = dictionary["rsvp"] as! Int? ?? 0
         let date = dictionary["date"] as! String? ?? ""
         let tag = dictionary["tag"] as! String? ?? ""
-        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, date: date, documentID: "")
+        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, date: date, documentID: "", flyerImage: UIImage())
     }
     
     func addRSVP(completed: @escaping () -> ()) {
@@ -97,6 +99,42 @@ class Event {
         }
     }
     
+    func saveImage(completed: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        let storage = Storage.storage()
+        guard let photoData = self.flyerImage.jpegData(compressionQuality: 0.5) else {
+            print("ERROR")
+            return completed(false)
+        }
+        let storageRef = storage.reference().child(self.documentID)
+        let uploadTask = storageRef.putData(photoData)
+        uploadTask.observe(.success) { (snapshot) in
+            completed(true)
+            print("did the photo go to storage?")
+        }
+        uploadTask.observe(.failure) { (snapshot) in
+            if let error = snapshot.error {
+                print("error")
+            }
+            return completed(false)
+        }
+    }
+    
+    func loadEventPhoto(completed: @escaping () -> ()) {
+        let storage = Storage.storage()
+        let photoRef = storage.reference().child(self.documentID)
+        photoRef.getData(maxSize: 25 * 1025 * 1025) {data, error in
+        if let error = error {
+            print("ERROR getting the photo")
+        }
+        else {
+            let image = UIImage(data: data!)
+            self.flyerImage = image!
+            completed()
+            }
+        }
+    }
+    
     func saveData(completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         let dataToSave = self.dictionary
@@ -114,7 +152,9 @@ class Event {
         }
         else {
             var ref: DocumentReference? = nil
-            ref =  db.collection("events").document(self.tag).collection("events").addDocument(data: dataToSave) { error in
+            self.documentID = UUID().uuidString
+            ref =  db.collection("events").document(self.tag).collection("events").document(self.documentID)
+            ref!.setData(dataToSave) { (error) in
                 if let error = error {
                     print("Error creating document \(error)")
                     completed(false)

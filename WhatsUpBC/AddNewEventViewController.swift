@@ -55,8 +55,6 @@ class AddNewEventViewController: UIViewController {
         }
     }
     
-    
-    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         print("Event Name: \(eventNameTextField.text!)")
         print("Event Host: \(eventHostTextField.text!)")
@@ -76,12 +74,14 @@ class AddNewEventViewController: UIViewController {
                           tag: eventTag,
                           rsvp: 0,
                           date: formatter.string(from: eventDatePicker.date),
-                          documentID: ""
+                          documentID: "",
+                          flyerImage: eventFlyerImageView.image!)
         
-        )
         event.saveData { success in
             if success {
-                self.leaveViewController()
+                event.saveImage { success in
+                    self.leaveViewController()
+                }
             }
             else {
                 print("COULDNT LEAVE VIEW CONTROLLER")

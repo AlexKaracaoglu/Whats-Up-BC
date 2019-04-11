@@ -145,7 +145,7 @@
                                         <connections>
                                             <outlet property="eventDateLabel" destination="GJg-xq-8bg" id="hHp-nG-WQ8"/>
                                             <outlet property="eventNameLabel" destination="YRU-aO-qtG" id="lU6-mG-gZ6"/>
-                                            <segue destination="mpD-aA-PZh" kind="show" id="BsY-In-aPC"/>
+                                            <segue destination="mpD-aA-PZh" kind="show" identifier="ShowEventDetail" id="BsY-In-aPC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -197,6 +197,10 @@
                                     <action selector="rsvp:" destination="mpD-aA-PZh" eventType="touchUpInside" id="rXh-G4-2jI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iG-WB-9Cd">
+                                <rect key="frame" x="67" y="423" width="240" height="224"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="teW-qs-ehc"/>
@@ -204,6 +208,7 @@
                     <navigationItem key="navigationItem" id="tlp-FN-OZh"/>
                     <connections>
                         <outlet property="documentIDLabel" destination="HGD-KV-p4E" id="kqb-4C-Kc6"/>
+                        <outlet property="eventFlyerImageView" destination="2iG-WB-9Cd" id="B67-P2-cXe"/>
                         <outlet property="nameLabel" destination="NFU-kG-pMT" id="wQj-vD-HY2"/>
                         <outlet property="rsvpButton" destination="Laz-v8-rLT" id="hRF-m0-VTF"/>
                     </connections>

@@ -11,6 +11,7 @@ import Firebase
 
 class EventDetailViewController: UIViewController {
 
+    @IBOutlet weak var eventFlyerImageView: UIImageView!
     @IBOutlet weak var rsvpButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var documentIDLabel: UILabel!
@@ -32,6 +33,10 @@ class EventDetailViewController: UIViewController {
             if self.rsvpList.contains(self.event.documentID) {
                 self.rsvpButton.setTitle("Un-RSVP", for: .normal)
             }
+        }
+        
+        event.loadEventPhoto {
+            self.eventFlyerImageView.image = self.event.flyerImage
         }
         
     }
