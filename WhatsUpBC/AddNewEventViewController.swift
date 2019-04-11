@@ -21,6 +21,8 @@ class AddNewEventViewController: UIViewController {
     @IBOutlet weak var eventNameTextField: UITextField!
     var imagepicker = UIImagePickerController()
     
+    var flyerExist = false
+    
     var tags = ["Speech", "Panel", "Workshop", "Volunteering", "Activity", "Other"]
     
     var eventTag = "Speech"
@@ -64,7 +66,7 @@ class AddNewEventViewController: UIViewController {
         print("Event Description: \(eventDescriptionTextView.text!)")
         print("Event Tag: \(eventTag)")
         
-        var event = Event(name: eventNameTextField.text!,
+        let event = Event(name: eventNameTextField.text!,
                           host: eventHostTextField.text!,
                           contact: Auth.auth().currentUser?.email ?? "Unknown",
                           location: eventLocationTextField.text!,
@@ -73,13 +75,16 @@ class AddNewEventViewController: UIViewController {
                           rsvp: 0,
                           dateString: eventDatePicker.date.toString(),
                           documentID: "",
-                          flyerImage: eventFlyerImageView.image!)
+                          flyerImage: eventFlyerImageView.image!,
+                          flyerExist: false)
         
         event.saveData { success in
             if success {
-                event.saveImage { success in
-                    self.leaveViewController()
+                if event.flyerExist {
+                    event.saveImage { success in
+                    }
                 }
+                self.leaveViewController()
             }
             else {
                 print("COULDNT LEAVE VIEW CONTROLLER")
@@ -89,12 +94,13 @@ class AddNewEventViewController: UIViewController {
         
     }
     
-    
     @IBAction func flyerTapped(_ sender: UITapGestureRecognizer) {
-        
-        cameraOrLibraryAlert()
-        
     }
+    
+    @IBAction func addFlyerPressed(_ sender: UIButton) {
+        cameraOrLibraryAlert()
+    }
+    
 }
 
 extension AddNewEventViewController: UITextViewDelegate {
@@ -137,6 +143,7 @@ extension AddNewEventViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         eventFlyerImageView.image = selectedImage
+        flyerExist = true
         dismiss(animated: true, completion: nil)
     }
     

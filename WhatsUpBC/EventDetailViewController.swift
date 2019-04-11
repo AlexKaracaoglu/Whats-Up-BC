@@ -39,6 +39,8 @@ class EventDetailViewController: UIViewController {
             self.eventFlyerImageView.image = self.event.flyerImage
         }
         
+        eventFlyerImageView.isUserInteractionEnabled = event.flyerExist
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

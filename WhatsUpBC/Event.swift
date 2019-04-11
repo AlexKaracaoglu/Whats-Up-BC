@@ -21,6 +21,7 @@ class Event {
     var dateString: String
     var documentID: String
     var flyerImage: UIImage
+    var flyerExist: Bool
     
     var date: Date {
         return dateString.toDate()
@@ -28,10 +29,10 @@ class Event {
     
     
     var dictionary: [String: Any] {
-        return ["name": name, "host": host, "contact": contact, "location": location, "description": description, "rsvp": rsvp, "dateString": dateString, "tag": tag]
+        return ["name": name, "host": host, "contact": contact, "location": location, "description": description, "rsvp": rsvp, "dateString": dateString, "tag": tag, "flyerExist": flyerExist]
     }
     
-    init(name: String, host: String, contact: String, location: String, description: String, tag: String, rsvp: Int, dateString: String, documentID: String, flyerImage: UIImage) {
+    init(name: String, host: String, contact: String, location: String, description: String, tag: String, rsvp: Int, dateString: String, documentID: String, flyerImage: UIImage, flyerExist: Bool) {
         self.name = name
         self.host = host
         self.contact = contact
@@ -42,10 +43,11 @@ class Event {
         self.dateString = dateString
         self.documentID = documentID
         self.flyerImage = flyerImage
+        self.flyerExist = flyerExist
     }
     
     convenience init() {
-        self.init(name: "", host: "", contact: "", location: "", description: "", tag: "", rsvp: 0, dateString: "", documentID: "", flyerImage: UIImage())
+        self.init(name: "", host: "", contact: "", location: "", description: "", tag: "", rsvp: 0, dateString: "", documentID: "", flyerImage: UIImage(), flyerExist: false)
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -57,7 +59,8 @@ class Event {
         let rsvp = dictionary["rsvp"] as! Int? ?? 0
         let dateString = dictionary["dateString"] as! String? ?? ""
         let tag = dictionary["tag"] as! String? ?? ""
-        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, dateString: dateString, documentID: "", flyerImage: UIImage())
+        let flyerExist = dictionary["flyerExist"] as! Bool? ?? false
+        self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, dateString: dateString, documentID: "", flyerImage: UIImage(), flyerExist: flyerExist)
     }
     
     func addRSVP(completed: @escaping () -> ()) {
