@@ -165,6 +165,21 @@
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
+		<key>GoogleMaps.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
+		</dict>
+		<key>GooglePlacePicker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>37</integer>
+		</dict>
+		<key>GooglePlaces.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>38</integer>
+		</dict>
 		<key>GoogleSignIn.xcscheme</key>
 		<dict>
 			<key>isShown</key>

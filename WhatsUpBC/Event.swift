@@ -53,6 +53,50 @@ class Event {
         self.init(name: name, host: host, contact: contact, location: location, description: description, tag: tag, rsvp: rsvp, date: date, documentID: "")
     }
     
+    func addRSVP(completed: @escaping () -> ()) {
+        let db = Firestore.firestore()
+        let ref = db.collection("events").document(self.tag).collection("events").document(self.documentID)
+        ref.getDocument { (querySnapshot, error) in
+            guard error == nil else {
+                print("ERROR")
+                return completed()
+            }
+            self.rsvp += 1
+            let dataToSave = self.dictionary
+            ref.setData(dataToSave) { (error) in
+                if let error = error {
+                    print("ERROR")
+                    completed()
+                }
+                else {
+                    completed()
+                }
+            }
+        }
+    }
+    
+    func removeRSVP(completed: @escaping () -> ()) {
+        let db = Firestore.firestore()
+        let ref = db.collection("events").document(self.tag).collection("events").document(self.documentID)
+        ref.getDocument { (querySnapshot, error) in
+            guard error == nil else {
+                print("ERROR")
+                return completed()
+            }
+            self.rsvp -= 1
+            let dataToSave = self.dictionary
+            ref.setData(dataToSave) { (error) in
+                if let error = error {
+                    print("ERROR")
+                    completed()
+                }
+                else {
+                    completed()
+                }
+            }
+        }
+    }
+    
     func saveData(completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         let dataToSave = self.dictionary

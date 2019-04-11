@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laz-v8-rLT">
-                                <rect key="frame" x="164" y="352" width="46" height="30"/>
+                                <rect key="frame" x="113" y="351" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="RSVP"/>
                                 <connections>
@@ -204,6 +204,7 @@
                     <connections>
                         <outlet property="documentIDLabel" destination="HGD-KV-p4E" id="kqb-4C-Kc6"/>
                         <outlet property="nameLabel" destination="NFU-kG-pMT" id="wQj-vD-HY2"/>
+                        <outlet property="rsvpButton" destination="Laz-v8-rLT" id="hRF-m0-VTF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkT-ub-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,12 +338,6 @@
         <!--ShowRSVPS View Controller-->
         <scene sceneID="8nK-Rw-3E5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="smo-Q1-yz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="yjT-6T-FYS">
-                    <connections>
-                        <action selector="rsvp:" destination="qFe-sp-6hg" id="dG8-tH-mLa"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController id="qFe-sp-6hg" customClass="ShowRSVPSViewController" customModule="WhatsUpBC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ba-Ap-Qbp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -391,6 +386,12 @@
                         <outlet property="tableView" destination="p54-hu-e00" id="KSv-XL-bHk"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smo-Q1-yz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yjT-6T-FYS">
+                    <connections>
+                        <action selector="rsvp:" destination="qFe-sp-6hg" id="dG8-tH-mLa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="993" y="860"/>
         </scene>

@@ -42,6 +42,19 @@ class RSVP {
         self.init(name: name, date: date, documentID: documentID, user: user, tag: tag)
     }
     
+    func deleteData(completed: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+         let ref = db.collection("rsvps").document(self.user).collection("rsvps").document(self.documentID).delete() { error in
+            if let error = error {
+                print("ERROR")
+                completed(false)
+            }
+            else {
+                completed(true)
+            }
+        }
+    }
+    
     func saveData(completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         let dataToSave = self.dictionary
