@@ -25,9 +25,11 @@ class EventsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         events.loadEventsFromTag {
-            self.events.eventArray = self.events.eventArray.filter({$0.date > Date()})
-            self.events.eventArray.sort(by: {$0.date < $1.date})
-            self.tableView.reloadData()
+            if self.events.eventArray.count > 0 {
+                self.events.eventArray = self.events.eventArray.filter({$0.date > Date()})
+                self.events.eventArray.sort(by: {$0.date < $1.date})
+                self.tableView.reloadData()
+            }
         }
     }
     

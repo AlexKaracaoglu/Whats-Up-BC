@@ -12,6 +12,6 @@ extension String {
     func toDate() -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "EE, MMM d, yyyy 'at' hh:mm aaa"
-        return (formatter.date(from: self)!)
+        return formatter.date(from: self) ?? Date()
     }
 }
