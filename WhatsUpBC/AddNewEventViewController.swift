@@ -77,8 +77,8 @@ class AddNewEventViewController: UIViewController {
                           rsvp: 0,
                           dateString: eventDatePicker.date.toString(),
                           documentID: "",
-                          flyerImage: eventFlyerImageView.image!,
-                          flyerExist: false)
+                          flyerImage: eventFlyerImageView.image ?? UIImage(),
+                          flyerExist: flyerExist)
         
         event.saveData { success in
             if success {
