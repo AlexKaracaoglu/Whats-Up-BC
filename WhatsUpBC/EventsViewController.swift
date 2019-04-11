@@ -21,6 +21,27 @@ class EventsViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        setTitle()
+    }
+    
+    func setTitle() {
+        switch events.tag {
+        case "Speech":
+            self.title = "Speeches"
+        case "Panel":
+            self.title = "Panels"
+        case "Workshop":
+            self.title = "Workshops"
+        case "Volunteering":
+            self.title = "Volunteering"
+        case "Activity":
+            self.title = "Activities"
+        case "Other":
+            self.title = "Other Events"
+        default:
+            self.title = "How did you get here?"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

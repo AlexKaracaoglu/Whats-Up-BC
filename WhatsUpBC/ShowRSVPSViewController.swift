@@ -20,6 +20,8 @@ class ShowRSVPSViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.title = "Your Upcoming Events"
     }
     
     override func viewWillAppear(_ animated: Bool) {

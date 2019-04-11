@@ -18,6 +18,8 @@ class EventTypesViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.title = "Event Types"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

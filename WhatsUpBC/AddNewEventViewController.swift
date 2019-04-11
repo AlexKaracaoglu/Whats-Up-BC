@@ -36,6 +36,8 @@ class AddNewEventViewController: UIViewController {
         eventTagPickerView.delegate = self
         
         imagepicker.delegate = self
+        
+        self.title = "Add New Event"
     }
     
     func leaveViewController() {

@@ -18,6 +18,8 @@ class FlyerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         flyerImage.image = flyer
+        
+        self.title = "Event Flyer"
     }
     
 
