@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EventSearchViewController: UIViewController {
 
@@ -18,6 +19,10 @@ class EventSearchViewController: UIViewController {
     
     var eventTag = "Speech"
     
+    var rsvpList: [String] = []
+    
+    var rsvps = RSVPS()
+    
     var events = Events()
     
     override func viewDidLoad() {
@@ -28,16 +33,27 @@ class EventSearchViewController: UIViewController {
         
         events.tag = eventTag
         setTitle()
-        events.loadEventsFromTag {
-            if self.events.eventArray.count > 0 {
-                self.events.eventArray = self.events.eventArray.filter({$0.date > Date()})
-                self.events.eventArray.sort(by: {$0.date < $1.date})
-                self.tableView.reloadData()
+        
+        self.rsvps.user = (Auth.auth().currentUser?.email!)!
+        self.rsvps.loadData {
+            self.makeRSVPList()
+            self.events.loadEventsFromTag {
+                if self.events.eventArray.count > 0 {
+                    self.events.eventArray = self.events.eventArray.filter({$0.date > Date()})
+                    self.events.eventArray.sort(by: {$0.date < $1.date})
+                    self.tableView.reloadData()
+                }
             }
         }
         
         eventTypePickerView.dataSource = self
         eventTypePickerView.delegate = self
+    }
+    
+    func makeRSVPList() {
+        for rsvp in rsvps.rsvpArray {
+            rsvpList.append(rsvp.documentID)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,6 +84,11 @@ class EventSearchViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindFromEventDetailVC(for segue: UIStoryboardSegue) {
+        let source = segue.source as! EventDetailViewController
+        self.rsvpList = source.rsvpList
+    }
+    
     @IBAction func searchForEventButtonPressed(_ sender: UIButton) {
         events.tag = eventTag
         events.loadEventsFromTag {
@@ -92,7 +113,8 @@ extension EventSearchViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventSearchTableViewCell
         cell.eventNameLabel.text = events.eventArray[indexPath.row].name
         cell.eventDateLabel.text = events.eventArray[indexPath.row].dateString
-        //        cell.rsvpImage.image = UIImage(named: images[rsvp])
+        let rsvpImage = rsvpList.contains(events.eventArray[indexPath.row].documentID) ? "star-filled" : "star-empty"
+        cell.rsvpImage.image = UIImage(named: rsvpImage)
         return cell
     }
     
