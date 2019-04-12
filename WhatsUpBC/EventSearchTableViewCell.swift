@@ -1,14 +1,14 @@
 //
-//  EventsViewTableViewCell.swift
+//  EventSearchTableViewCell.swift
 //  WhatsUpBC
 //
-//  Created by Alex Karacaoglu on 4/10/19.
+//  Created by Alex Karacaoglu on 4/12/19.
 //  Copyright © 2019 Alex Karacaoglu. All rights reserved.
 //
 
 import UIKit
 
-class EventsViewTableViewCell: UITableViewCell {
+class EventSearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventNameLabel: UILabel!

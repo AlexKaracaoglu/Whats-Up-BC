@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1C27F73B5FBFA57B0F9A6E2B /* Pods_WhatsUpBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7E9715A29E0FE611B541B0 /* Pods_WhatsUpBC.framework */; };
 		BF044397225E88980011B919 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF044396225E88980011B919 /* Events.swift */; };
-		BF044399225E8F900011B919 /* EventsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF044398225E8F900011B919 /* EventsViewTableViewCell.swift */; };
 		BF04439D225E95650011B919 /* RSVPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF04439C225E95650011B919 /* RSVPS.swift */; };
 		BF04439F225E9BE10011B919 /* ShowRSVPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF04439E225E9BE10011B919 /* ShowRSVPSViewController.swift */; };
 		BF0443A1225EAD370011B919 /* RSVP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0443A0225EAD370011B919 /* RSVP.swift */; };
@@ -17,17 +16,16 @@
 		BF0443A9225F8D0E0011B919 /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0443A8225F8D0E0011B919 /* Date+toString.swift */; };
 		BF0443AB225F8D1F0011B919 /* String+toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0443AA225F8D1F0011B919 /* String+toDate.swift */; };
 		BF0443AD225F93C50011B919 /* FlyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0443AC225F93C50011B919 /* FlyerViewController.swift */; };
+		BF0443AF22610D150011B919 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0443AE22610D150011B919 /* EventSearchViewController.swift */; };
+		BF0443B122610F510011B919 /* EventSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0443B022610F510011B919 /* EventSearchTableViewCell.swift */; };
 		BF4C5BFC2259901F00316F7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5BFB2259901F00316F7A /* AppDelegate.swift */; };
 		BF4C5BFE2259901F00316F7A /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5BFD2259901F00316F7A /* EntryViewController.swift */; };
 		BF4C5C012259901F00316F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5BFF2259901F00316F7A /* Main.storyboard */; };
 		BF4C5C032259902100316F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C022259902100316F7A /* Assets.xcassets */; };
 		BF4C5C062259902100316F7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5C042259902100316F7A /* LaunchScreen.storyboard */; };
 		BF4C5C1622599F8E00316F7A /* AddNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1522599F8E00316F7A /* AddNewEventViewController.swift */; };
-		BF4C5C1C2259A1E900316F7A /* EventTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1B2259A1E900316F7A /* EventTypesViewController.swift */; };
-		BF4C5C1E2259A24800316F7A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1D2259A24800316F7A /* EventsViewController.swift */; };
 		BF4C5C202259A2CA00316F7A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5C1F2259A2CA00316F7A /* EventDetailViewController.swift */; };
 		BF9AD6BE225BD54C002E0CA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9AD6BD225BD54C002E0CA9 /* GoogleService-Info.plist */; };
-		BF9AD6F6225E6639002E0CA9 /* EventTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AD6F5225E6639002E0CA9 /* EventTypeTableViewCell.swift */; };
 		BF9AD6F8225E7809002E0CA9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AD6F7225E7809002E0CA9 /* Event.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +33,6 @@
 		94D081855F078A2BCAA9C41D /* Pods-WhatsUpBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsUpBC.release.xcconfig"; path = "Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC.release.xcconfig"; sourceTree = "<group>"; };
 		BA7E9715A29E0FE611B541B0 /* Pods_WhatsUpBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsUpBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF044396225E88980011B919 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		BF044398225E8F900011B919 /* EventsViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewTableViewCell.swift; sourceTree = "<group>"; };
 		BF04439C225E95650011B919 /* RSVPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSVPS.swift; sourceTree = "<group>"; };
 		BF04439E225E9BE10011B919 /* ShowRSVPSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRSVPSViewController.swift; sourceTree = "<group>"; };
 		BF0443A0225EAD370011B919 /* RSVP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSVP.swift; sourceTree = "<group>"; };
@@ -43,6 +40,8 @@
 		BF0443A8225F8D0E0011B919 /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		BF0443AA225F8D1F0011B919 /* String+toDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toDate.swift"; sourceTree = "<group>"; };
 		BF0443AC225F93C50011B919 /* FlyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerViewController.swift; sourceTree = "<group>"; };
+		BF0443AE22610D150011B919 /* EventSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchViewController.swift; sourceTree = "<group>"; };
+		BF0443B022610F510011B919 /* EventSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchTableViewCell.swift; sourceTree = "<group>"; };
 		BF4C5BF82259901F00316F7A /* WhatsUpBC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsUpBC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C5BFB2259901F00316F7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF4C5BFD2259901F00316F7A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
@@ -51,11 +50,8 @@
 		BF4C5C052259902100316F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF4C5C072259902100316F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4C5C1522599F8E00316F7A /* AddNewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventViewController.swift; sourceTree = "<group>"; };
-		BF4C5C1B2259A1E900316F7A /* EventTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventTypesViewController.swift; path = /Users/alexkaracaoglu/Desktop/WhatsUpBC/WhatsUpBC/EventTypesViewController.swift; sourceTree = "<absolute>"; };
-		BF4C5C1D2259A24800316F7A /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		BF4C5C1F2259A2CA00316F7A /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		BF9AD6BD225BD54C002E0CA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BF9AD6F5225E6639002E0CA9 /* EventTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeTableViewCell.swift; sourceTree = "<group>"; };
 		BF9AD6F7225E7809002E0CA9 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E4977336885B14343882C804 /* Pods-WhatsUpBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsUpBC.debug.xcconfig"; path = "Target Support Files/Pods-WhatsUpBC/Pods-WhatsUpBC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,10 +109,6 @@
 				BF4C5BFB2259901F00316F7A /* AppDelegate.swift */,
 				BF4C5BFD2259901F00316F7A /* EntryViewController.swift */,
 				BF4C5C1522599F8E00316F7A /* AddNewEventViewController.swift */,
-				BF4C5C1B2259A1E900316F7A /* EventTypesViewController.swift */,
-				BF9AD6F5225E6639002E0CA9 /* EventTypeTableViewCell.swift */,
-				BF4C5C1D2259A24800316F7A /* EventsViewController.swift */,
-				BF044398225E8F900011B919 /* EventsViewTableViewCell.swift */,
 				BF4C5C1F2259A2CA00316F7A /* EventDetailViewController.swift */,
 				BF0443AC225F93C50011B919 /* FlyerViewController.swift */,
 				BF9AD6F7225E7809002E0CA9 /* Event.swift */,
@@ -124,6 +116,8 @@
 				BF04439C225E95650011B919 /* RSVPS.swift */,
 				BF0443A0225EAD370011B919 /* RSVP.swift */,
 				BF4C5BFF2259901F00316F7A /* Main.storyboard */,
+				BF0443AE22610D150011B919 /* EventSearchViewController.swift */,
+				BF0443B022610F510011B919 /* EventSearchTableViewCell.swift */,
 				BF04439E225E9BE10011B919 /* ShowRSVPSViewController.swift */,
 				BF0443A2225EB2ED0011B919 /* ShowRSVPSTableViewCell.swift */,
 				BF0443A8225F8D0E0011B919 /* Date+toString.swift */,
@@ -332,15 +326,13 @@
 				BF0443A1225EAD370011B919 /* RSVP.swift in Sources */,
 				BF4C5BFC2259901F00316F7A /* AppDelegate.swift in Sources */,
 				BF0443A3225EB2ED0011B919 /* ShowRSVPSTableViewCell.swift in Sources */,
-				BF9AD6F6225E6639002E0CA9 /* EventTypeTableViewCell.swift in Sources */,
 				BF04439F225E9BE10011B919 /* ShowRSVPSViewController.swift in Sources */,
 				BF0443AD225F93C50011B919 /* FlyerViewController.swift in Sources */,
-				BF044399225E8F900011B919 /* EventsViewTableViewCell.swift in Sources */,
-				BF4C5C1C2259A1E900316F7A /* EventTypesViewController.swift in Sources */,
+				BF0443B122610F510011B919 /* EventSearchTableViewCell.swift in Sources */,
+				BF0443AF22610D150011B919 /* EventSearchViewController.swift in Sources */,
 				BF04439D225E95650011B919 /* RSVPS.swift in Sources */,
 				BF044397225E88980011B919 /* Events.swift in Sources */,
 				BF4C5C1622599F8E00316F7A /* AddNewEventViewController.swift in Sources */,
-				BF4C5C1E2259A24800316F7A /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

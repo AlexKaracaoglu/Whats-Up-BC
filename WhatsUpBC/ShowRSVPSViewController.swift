@@ -40,7 +40,7 @@ extension ShowRSVPSViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventsViewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ShowRSVPSTableViewCell
         cell.eventNameLabel.text = rsvps.rsvpArray[indexPath.row].name
         cell.eventDateLabel.text = rsvps.rsvpArray[indexPath.row].date
         return cell
