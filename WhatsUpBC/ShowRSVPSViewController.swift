@@ -31,6 +31,20 @@ class ShowRSVPSViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowEventDetail" {
+            let destination = segue.destination as! EventDetailViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            
+            var event = Event()
+            event.tag = rsvps.rsvpArray[selectedIndexPath.row].tag
+            event.documentID = rsvps.rsvpArray[selectedIndexPath.row].documentID
+            
+            destination.event = event
+            destination.tag = rsvps.rsvpArray[selectedIndexPath.row].tag
+        }
+    }
 
 }
 

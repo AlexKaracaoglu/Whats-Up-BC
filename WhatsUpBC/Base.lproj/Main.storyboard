@@ -185,7 +185,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3102" y="65"/>
+            <point key="canvasLocation" x="3057" y="438"/>
         </scene>
         <!--Flyer View Controller-->
         <scene sceneID="IU3-ZF-OgD">
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkL-Tw-jDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4175" y="65"/>
+            <point key="canvasLocation" x="4113" y="438"/>
         </scene>
         <!--Add New Event View Controller-->
         <scene sceneID="oAS-1K-Jes">
@@ -391,6 +391,7 @@
                                         <connections>
                                             <outlet property="eventDateLabel" destination="xjp-rB-URb" id="EYC-1y-hLY"/>
                                             <outlet property="eventNameLabel" destination="qwn-dP-HrY" id="hue-QZ-XIm"/>
+                                            <segue destination="mpD-aA-PZh" kind="show" identifier="ShowEventDetail" id="Hr7-eP-ddI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -413,4 +414,7 @@
             <point key="canvasLocation" x="2116" y="888"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hr7-eP-ddI"/>
+    </inferredMetricsTieBreakers>
 </document>

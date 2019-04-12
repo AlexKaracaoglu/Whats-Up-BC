@@ -128,6 +128,29 @@ class Event {
         }
     }
     
+    func loadEventFromTagAndID(completed: @escaping () -> ()) {
+        let db = Firestore.firestore()
+        let ref = db.collection("events").document(self.tag).collection("events").document(self.documentID)
+        ref.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                let event = Event(dictionary: data!)
+                self.contact = event.contact
+                self.dateString = event.dateString
+                self.description = event.description
+                self.host = event.host
+                self.location = event.location
+                self.flyerExist = event.flyerExist
+                self.name = event.name
+                self.rsvp = event.rsvp
+                completed()
+            } else {
+                print("ERROR: DOCUMENT DOES NOT EXIST")
+                completed()
+            }
+        }
+    }
+    
     func loadEventPhoto(completed: @escaping () -> ()) {
         let storage = Storage.storage()
         let photoRef = storage.reference().child(self.documentID)

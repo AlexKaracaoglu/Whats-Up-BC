@@ -23,23 +23,27 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = event.name
-        documentIDLabel.text = tag
         
-        rsvps.user = (Auth.auth().currentUser?.email!)!
-        rsvps.loadData {
-            self.makeRSVPList()
-            // check if this in rsvp list
-            if self.rsvpList.contains(self.event.documentID) {
-                self.rsvpButton.setTitle("Un-RSVP", for: .normal)
+        event.loadEventFromTagAndID {
+            self.rsvps.user = (Auth.auth().currentUser?.email!)!
+            self.rsvps.loadData {
+                self.makeRSVPList()
+                // check if this in rsvp list
+                if self.rsvpList.contains(self.event.documentID) {
+                    self.rsvpButton.setTitle("Un-RSVP", for: .normal)
+                }
             }
+            
+            self.event.loadEventPhoto {
+                self.eventFlyerImageView.image = self.event.flyerImage
+            }
+            
+            self.eventFlyerImageView.isUserInteractionEnabled = self.event.flyerExist
+            
+            self.nameLabel.text = self.event.name
+            self.documentIDLabel.text = self.tag
+            
         }
-        
-        event.loadEventPhoto {
-            self.eventFlyerImageView.image = self.event.flyerImage
-        }
-        
-        eventFlyerImageView.isUserInteractionEnabled = event.flyerExist
         
     }
     
