@@ -25,14 +25,10 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         
         event.loadEventFromTagAndID {
-            self.rsvps.user = (Auth.auth().currentUser?.email!)!
-            self.rsvps.loadData {
-                self.makeRSVPList()
                 // check if this in rsvp list
                 if self.rsvpList.contains(self.event.documentID) {
                     self.rsvpButton.setTitle("Un-RSVP", for: .normal)
                 }
-            }
             
             self.event.loadEventPhoto {
                 self.eventFlyerImageView.image = self.event.flyerImage
@@ -68,7 +64,6 @@ class EventDetailViewController: UIViewController {
         let rsvp = RSVP(name: event.name, date: event.dateString, documentID: event.documentID, user: (Auth.auth().currentUser?.email)!, tag: event.tag)
         if rsvpButton.titleLabel?.text == "RSVP" {
             rsvp.saveData { success in
-                print("ddid it work?")
                 self.rsvpButton.setTitle("Un-RSVP", for: .normal)
                 self.event.addRSVP() {
                     

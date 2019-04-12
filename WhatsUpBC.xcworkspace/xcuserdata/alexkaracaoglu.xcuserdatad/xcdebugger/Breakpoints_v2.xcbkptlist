@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhatsUpBC/EventDetailViewController.swift"
-            timestampString = "576796315.189967"
+            timestampString = "576804176.124277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "makeRSVPList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhatsUpBC/AddNewEventViewController.swift"
-            timestampString = "576795339.7678421"
+            timestampString = "576803926.327785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -329,13 +329,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WhatsUpBC/EventDetailViewController.swift"
-            timestampString = "576796315.1905529"
+            filePath = "WhatsUpBC/EventSearchViewController.swift"
+            timestampString = "576804176.124458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "makeRSVPList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

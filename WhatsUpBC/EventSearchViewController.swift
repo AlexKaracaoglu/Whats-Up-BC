@@ -27,6 +27,8 @@ class EventSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("😀 viewDidLoad")
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -36,6 +38,7 @@ class EventSearchViewController: UIViewController {
         
         self.rsvps.user = (Auth.auth().currentUser?.email!)!
         self.rsvps.loadData {
+            self.rsvpList = []
             self.makeRSVPList()
             self.events.loadEventsFromTag {
                 if self.events.eventArray.count > 0 {
@@ -50,6 +53,11 @@ class EventSearchViewController: UIViewController {
         eventTypePickerView.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print("😀 viewDidAppear")
+    }
+    
     func makeRSVPList() {
         for rsvp in rsvps.rsvpArray {
             rsvpList.append(rsvp.documentID)
@@ -62,6 +70,7 @@ class EventSearchViewController: UIViewController {
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             destination.event = events.eventArray[selectedIndexPath.row]
             destination.tag = events.tag
+            destination.rsvpList = self.rsvpList
         }
     }
     

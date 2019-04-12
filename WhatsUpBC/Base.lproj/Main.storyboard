@@ -175,13 +175,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="teW-qs-ehc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tlp-FN-OZh">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="XJZ-Bp-D2c">
-                            <connections>
-                                <segue destination="XQX-B7-Bue" kind="unwind" unwindAction="unwindFromEventDetailVCFor:" id="acY-Ex-IUi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="tlp-FN-OZh"/>
                     <connections>
                         <outlet property="documentIDLabel" destination="HGD-KV-p4E" id="kqb-4C-Kc6"/>
                         <outlet property="eventFlyerImageView" destination="2iG-WB-9Cd" id="B67-P2-cXe"/>
@@ -190,7 +184,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkT-ub-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="XQX-B7-Bue" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="uz8-f7-Z8Y">
                     <connections>
                         <segue destination="zSs-8G-qTD" kind="show" identifier="ShowFlyer" id="WkZ-Rl-oZM"/>
