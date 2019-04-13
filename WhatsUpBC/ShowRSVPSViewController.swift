@@ -14,6 +14,7 @@ class ShowRSVPSViewController: UIViewController {
     
     var rsvps = RSVPS()
     var user = ""
+    var rsvpList: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +22,15 @@ class ShowRSVPSViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.title = "Your Upcoming Events"
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         rsvps.loadData {
             self.rsvps.rsvpArray = self.rsvps.rsvpArray.filter({$0.date.toDate() > Date()})
             self.rsvps.rsvpArray.sort(by: {$0.date < $1.date})
             self.tableView.reloadData()
+            self.makeRSVPList()
         }
+        self.title = "Your Upcoming Events"
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowEventDetail" {
             let destination = segue.destination as! EventDetailViewController
@@ -41,8 +40,15 @@ class ShowRSVPSViewController: UIViewController {
             event.tag = rsvps.rsvpArray[selectedIndexPath.row].tag
             event.documentID = rsvps.rsvpArray[selectedIndexPath.row].documentID
             
+            destination.rsvpList = self.rsvpList
             destination.event = event
             destination.tag = rsvps.rsvpArray[selectedIndexPath.row].tag
+        }
+    }
+    
+    func makeRSVPList() {
+        for rsvp in rsvps.rsvpArray {
+            rsvpList.append(rsvp.documentID)
         }
     }
 
@@ -57,6 +63,8 @@ extension ShowRSVPSViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ShowRSVPSTableViewCell
         cell.eventNameLabel.text = rsvps.rsvpArray[indexPath.row].name
         cell.eventDateLabel.text = rsvps.rsvpArray[indexPath.row].date
+        let rsvpImage = rsvpList.contains(rsvps.rsvpArray[indexPath.row].documentID) ? "star-filled" : "star-empty"
+        cell.rsvpImage.image = UIImage(named: rsvpImage)
         return cell
     }
     

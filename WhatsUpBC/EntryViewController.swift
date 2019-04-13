@@ -14,6 +14,10 @@ import GoogleSignIn
 class EntryViewController: UIViewController {
     
     var authUI: FUIAuth!
+    
+    var rsvps = RSVPS()
+    
+    var rsvpList: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +26,16 @@ class EntryViewController: UIViewController {
         // You need to adopt a FUIAuthDelegate protocol to receive callback
         authUI?.delegate = self
         
+        self.rsvps.user = (Auth.auth().currentUser?.email!)!
+        self.rsvps.loadData {
+            self.makeRSVPList()
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         signIn()
     }
     
@@ -33,6 +43,10 @@ class EntryViewController: UIViewController {
         if segue.identifier == "ViewRSVPS" {
             let destination = segue.destination as! ShowRSVPSViewController
             destination.rsvps.user = (Auth.auth().currentUser?.email)!
+        }
+        if segue.identifier == "EventSearch" {
+            let destination = segue.destination as! EventSearchViewController
+            destination.rsvpList = self.rsvpList
         }
     }
     
@@ -44,6 +58,12 @@ class EntryViewController: UIViewController {
         if authUI.auth?.currentUser == nil {
             self.authUI?.providers = providers
             present(authUI.authViewController(), animated: true, completion: nil)
+        }
+    }
+    
+    func makeRSVPList() {
+        for rsvp in rsvps.rsvpArray {
+            rsvpList.append(rsvp.documentID)
         }
     }
     

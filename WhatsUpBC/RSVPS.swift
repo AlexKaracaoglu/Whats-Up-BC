@@ -12,15 +12,10 @@ import Firebase
 class RSVPS {
     
     var rsvpArray: [RSVP] = []
-    var db: Firestore!
     var user = ""
     
-    init() {
-        db = Firestore.firestore()
-    }
-    
-    
     func loadData(completed: @escaping () -> ()) {
+        let db = Firestore.firestore()
         db.collection("rsvps").document(self.user).collection("rsvps").addSnapshotListener { (querySnapshot, error) in
             guard error == nil else {
                 print("ERROR ADDING SNAPSHOT LISTENER")

@@ -10,6 +10,7 @@ import UIKit
 
 class ShowRSVPSTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rsvpImage: UIImageView!
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventNameLabel: UILabel!
 

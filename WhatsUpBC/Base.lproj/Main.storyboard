@@ -31,7 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search For Events"/>
                                 <connections>
-                                    <segue destination="0Tm-5I-Kwa" kind="show" id="dTF-Vx-lx6"/>
+                                    <segue destination="0Tm-5I-Kwa" kind="show" identifier="EventSearch" id="dTF-Vx-lx6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-CX-Ltw">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6f-I1-nye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2116" y="65.217391304347828"/>
+            <point key="canvasLocation" x="2116" y="27"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="8ad-9T-Uh4">
@@ -190,7 +190,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3057" y="438"/>
+            <point key="canvasLocation" x="2993" y="438"/>
         </scene>
         <!--Flyer View Controller-->
         <scene sceneID="IU3-ZF-OgD">
@@ -319,7 +319,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3102" y="-629"/>
+            <point key="canvasLocation" x="3092" y="-779"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kcT-R4-LgJ">
@@ -355,7 +355,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skD-R1-tZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2116" y="-629"/>
+            <point key="canvasLocation" x="2116" y="-778"/>
         </scene>
         <!--ShowRSVPS View Controller-->
         <scene sceneID="8nK-Rw-3E5">
@@ -391,11 +391,17 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="qqn-De-IvF">
+                                                    <rect key="frame" x="310" y="14" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="eventDateLabel" destination="xjp-rB-URb" id="EYC-1y-hLY"/>
                                             <outlet property="eventNameLabel" destination="qwn-dP-HrY" id="hue-QZ-XIm"/>
+                                            <outlet property="rsvpImage" destination="qqn-De-IvF" id="coP-F3-YJM"/>
+                                            <segue destination="mpD-aA-PZh" kind="show" identifier="ShowEventDetail" id="ofX-UI-hBI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -415,10 +421,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2116" y="888"/>
+            <point key="canvasLocation" x="2116" y="825"/>
         </scene>
     </scenes>
     <resources>
         <image name="star-empty" width="158" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ofX-UI-hBI"/>
+    </inferredMetricsTieBreakers>
 </document>
