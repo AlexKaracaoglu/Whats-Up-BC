@@ -13,7 +13,6 @@ class ShowRSVPSViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var rsvps = RSVPS()
-    var user = ""
     var rsvpList: [String] = []
 
     override func viewDidLoad() {
