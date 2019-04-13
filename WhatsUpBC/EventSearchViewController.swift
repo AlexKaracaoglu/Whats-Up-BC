@@ -124,7 +124,38 @@ extension EventSearchViewController: UITableViewDelegate, UITableViewDataSource 
         cell.eventDateLabel.text = events.eventArray[indexPath.row].dateString
         let rsvpImage = rsvpList.contains(events.eventArray[indexPath.row].documentID) ? "star-filled" : "star-empty"
         cell.rsvpImage.image = UIImage(named: rsvpImage)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EventSearchViewController.rsvp(_:)))
+        
+        cell.rsvpImage.isUserInteractionEnabled = true
+        cell.rsvpImage.tag = indexPath.row
+        cell.rsvpImage.addGestureRecognizer(tapGestureRecognizer)
+        
         return cell
+    }
+    
+    @objc func rsvp(_ sender:AnyObject){
+        let rsvp = RSVP(name: events.eventArray[sender.view.tag].name, date: events.eventArray[sender.view.tag].dateString, documentID: events.eventArray[sender.view.tag].documentID, user: (Auth.auth().currentUser?.email)!, tag: events.eventArray[sender.view.tag].tag)
+        if rsvpList.contains(events.eventArray[sender.view.tag].documentID) {
+            rsvp.deleteData { success in
+                self.deleteFromRSVPList(element: rsvp.documentID)
+                self.events.eventArray[self.view.tag].removeRSVP() {
+                }
+            }
+        }
+        else {
+            
+            rsvp.saveData { success in
+                self.events.eventArray[sender.view.tag].addRSVP() {
+                }
+            }
+        }
+        tableView.reloadData()
+
+    }
+    
+    func deleteFromRSVPList(element: String) {
+        rsvpList = rsvpList.filter() { $0 != element }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
