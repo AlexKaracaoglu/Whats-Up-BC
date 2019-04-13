@@ -12,9 +12,16 @@ import Firebase
 class EventDetailViewController: UIViewController {
 
     @IBOutlet weak var eventFlyerImageView: UIImageView!
-    @IBOutlet weak var rsvpButton: UIButton!
+    
+    @IBOutlet weak var rsvpButton: UIBarButtonItem!
+    
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var documentIDLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var hostLabel: UILabel!
+    @IBOutlet weak var rsvpCountLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
     
     var event = Event()
     var tag = ""
@@ -25,20 +32,22 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         
         event.loadEventFromTagAndID {
-                // check if this in rsvp list
                 if self.rsvpList.contains(self.event.documentID) {
-                    self.rsvpButton.setTitle("Un-RSVP", for: .normal)
+                    self.rsvpButton.title = "UN-RSVP"
                 }
+        
+            self.nameLabel.text = self.event.name
+            self.descriptionLabel.text = self.event.description
+            self.hostLabel.text = self.event.host
+            self.locationLabel.text = self.event.location
+            self.rsvpCountLabel.text = String(self.event.rsvp)
+            self.dateLabel.text = self.event.dateString
             
             self.event.loadEventPhoto {
+                self.eventFlyerImageView.isUserInteractionEnabled = self.event.flyerExist
+                
                 self.eventFlyerImageView.image = self.event.flyerImage
             }
-            
-            self.eventFlyerImageView.isUserInteractionEnabled = self.event.flyerExist
-            
-            self.nameLabel.text = self.event.name
-            self.documentIDLabel.text = self.tag
-            
         }
         
     }
@@ -59,23 +68,24 @@ class EventDetailViewController: UIViewController {
             rsvpList.append(rsvp.documentID)
         }
     }
-
-    @IBAction func rsvp(_ sender: UIButton) {
-        let rsvp = RSVP(name: event.name, date: event.dateString, documentID: event.documentID, user: (Auth.auth().currentUser?.email)!, tag: event.tag)
-        if rsvpButton.titleLabel?.text == "RSVP" {
+    
+    
+    @IBAction func rsvp(_ sender: UIBarButtonItem) {
+        let rsvp = RSVP(name: event.name, date: event.dateString, documentID: event.documentID, user: self.rsvps.user, tag: event.tag)
+        if rsvpButton.title == "RSVP" {
             rsvp.saveData { success in
-                self.rsvpButton.setTitle("Un-RSVP", for: .normal)
+                self.rsvpButton.title = "UN-RSVP"
                 self.event.addRSVP() {
-                    
+                    self.rsvpCountLabel.text = String(self.event.rsvp)
                 }
             }
         }
         else {
             rsvp.deleteData { success in
                 self.deleteFromRSVPList(element: rsvp.documentID)
-                self.rsvpButton.setTitle("RSVP", for: .normal)
+                self.rsvpButton.title = "RSVP"
                 self.event.removeRSVP() {
-                    
+                    self.rsvpCountLabel.text = String(self.event.rsvp)
                 }
             }
         }

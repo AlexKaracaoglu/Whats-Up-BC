@@ -42,6 +42,7 @@ class ShowRSVPSViewController: UIViewController {
             destination.rsvpList = self.rsvpList
             destination.event = event
             destination.tag = rsvps.rsvpArray[selectedIndexPath.row].tag
+            destination.rsvps.user = self.rsvps.user
         }
     }
     

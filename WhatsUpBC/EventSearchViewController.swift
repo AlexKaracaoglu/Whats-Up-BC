@@ -71,6 +71,7 @@ class EventSearchViewController: UIViewController {
             destination.event = events.eventArray[selectedIndexPath.row]
             destination.tag = events.tag
             destination.rsvpList = self.rsvpList
+            destination.rsvps.user = self.rsvps.user
         }
     }
     
@@ -91,11 +92,6 @@ class EventSearchViewController: UIViewController {
         default:
             self.title = "How did you get here?"
         }
-    }
-    
-    @IBAction func unwindFromEventDetailVC(for segue: UIStoryboardSegue) {
-        let source = segue.source as! EventDetailViewController
-        self.rsvpList = source.rsvpList
     }
     
     @IBAction func searchForEventButtonPressed(_ sender: UIButton) {

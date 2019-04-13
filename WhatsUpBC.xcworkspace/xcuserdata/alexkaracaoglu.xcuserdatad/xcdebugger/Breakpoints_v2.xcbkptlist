@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhatsUpBC/EventDetailViewController.swift"
-            timestampString = "576812993.282981"
+            timestampString = "576821304.604646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "makeRSVPList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhatsUpBC/AddNewEventViewController.swift"
-            timestampString = "576816865.741685"
+            timestampString = "576821304.6049401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhatsUpBC/ShowRSVPSViewController.swift"
-            timestampString = "576816865.7423379"
+            timestampString = "576821304.605521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhatsUpBC/EventSearchViewController.swift"
-            timestampString = "576816865.742479"
+            timestampString = "576821304.605848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhatsUpBC/ShowRSVPSViewController.swift"
-            timestampString = "576816865.742574"
+            timestampString = "576821304.606172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "rsvp(_:)"
             landmarkType = "7">
             <Locations>
@@ -385,6 +385,118 @@
                   offsetFromSymbolStart = "57">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhatsUpBC/EventDetailViewController.swift"
+            timestampString = "576821304.606276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in WhatsUpBC.EventDetailViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "WhatsUpBC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkaracaoglu/Desktop/WhatsUpBC/WhatsUpBC/EventDetailViewController.swift"
+                  timestampString = "576820008.0488189"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "542">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in WhatsUpBC.EventDetailViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "WhatsUpBC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkaracaoglu/Desktop/WhatsUpBC/WhatsUpBC/EventDetailViewController.swift"
+                  timestampString = "576820008.051509"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhatsUpBC/EventDetailViewController.swift"
+            timestampString = "576821304.606409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WhatsUpBC.EventDetailViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "WhatsUpBC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkaracaoglu/Desktop/WhatsUpBC/WhatsUpBC/EventDetailViewController.swift"
+                  timestampString = "576820008.0574189"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in WhatsUpBC.EventDetailViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "WhatsUpBC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexkaracaoglu/Desktop/WhatsUpBC/WhatsUpBC/EventDetailViewController.swift"
+                  timestampString = "576820008.059393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhatsUpBC/EventDetailViewController.swift"
+            timestampString = "576821304.606485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "rsvp(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
