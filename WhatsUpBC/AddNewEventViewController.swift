@@ -30,6 +30,8 @@ class AddNewEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        eventDatePicker.backgroundColor = UIColor( red: CGFloat(174/255.0), green: CGFloat(158/255.0), blue: CGFloat(114/255.0), alpha: CGFloat(1.0) )
+        
         eventDescriptionTextView.delegate = self
         
         eventTagPickerView.dataSource = self
@@ -107,9 +109,9 @@ class AddNewEventViewController: UIViewController {
 
 extension AddNewEventViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor != UIColor.black {
+        if textView.textColor != UIColor( red: CGFloat(61/255.0), green: CGFloat(6/255.0), blue: CGFloat(3/255.0), alpha: CGFloat(1.0) )  {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor( red: CGFloat(61/255.0), green: CGFloat(6/255.0), blue: CGFloat(3/255.0), alpha: CGFloat(1.0) )
         }
     }
     
