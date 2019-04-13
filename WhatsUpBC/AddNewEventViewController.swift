@@ -23,7 +23,7 @@ class AddNewEventViewController: UIViewController {
     
     var flyerExist = false
     
-    var tags = ["Speech", "Panel", "Workshop", "Volunteering", "Activity", "Other"]
+    var tags = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Other"]
     
     var eventTag = "Speech"
     
