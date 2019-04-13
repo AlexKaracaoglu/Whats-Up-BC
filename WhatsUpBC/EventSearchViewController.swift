@@ -12,7 +12,7 @@ import Firebase
 class EventSearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var orderByBarButton: UIBarButtonItem!
     @IBOutlet weak var eventTypePickerView: UIPickerView!
     
     let tags = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Other"]
@@ -43,8 +43,7 @@ class EventSearchViewController: UIViewController {
             self.events.loadEventsFromTag {
                 if self.events.eventArray.count > 0 {
                     self.events.eventArray = self.events.eventArray.filter({$0.date > Date()})
-                    self.events.eventArray.sort(by: {$0.date < $1.date})
-                    self.tableView.reloadData()
+                    self.sortEvents()
                 }
             }
         }
@@ -53,9 +52,19 @@ class EventSearchViewController: UIViewController {
         eventTypePickerView.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        print("😀 viewDidAppear")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        sortEvents()
+    }
+    
+    func sortEvents() {
+        if orderByBarButton.title == "Order By Date" {
+            self.events.eventArray.sort(by: {$0.rsvp > $1.rsvp})
+        }
+        else {
+            self.events.eventArray.sort(by: {$0.date < $1.date})
+        }
+        self.tableView.reloadData()
     }
     
     func makeRSVPList() {
@@ -96,15 +105,26 @@ class EventSearchViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func orderByBarButtonPressed(_ sender: UIBarButtonItem) {
+        if orderByBarButton.title == "Order By Popularity" {
+            orderByBarButton.title = "Order By Date"
+            sortEvents()
+        }
+        else {
+            orderByBarButton.title = "Order By Popularity"
+            sortEvents()
+        }
+    }
+    
     @IBAction func searchForEventButtonPressed(_ sender: UIButton) {
         events.tag = eventTag
         events.loadEventsFromTag {
             if self.events.eventArray.count > 0 {
                 self.events.eventArray = self.events.eventArray.filter({$0.date > Date()})
-                self.events.eventArray.sort(by: {$0.date < $1.date})
             }
             self.setTitle()
-            self.tableView.reloadData()
+            self.sortEvents()
         }
     }
     
@@ -148,6 +168,7 @@ extension EventSearchViewController: UITableViewDelegate, UITableViewDataSource 
                 }
             }
         }
+        sortEvents()
         tableView.reloadData()
 
     }

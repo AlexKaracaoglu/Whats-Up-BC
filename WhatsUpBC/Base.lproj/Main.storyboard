@@ -147,9 +147,16 @@
                         <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="ehf-sq-qga"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jrz-RF-F50"/>
+                    <navigationItem key="navigationItem" id="Jrz-RF-F50">
+                        <barButtonItem key="rightBarButtonItem" title="Order By Popularity" id="nub-N3-uUe">
+                            <connections>
+                                <action selector="orderByBarButtonPressed:" destination="0Tm-5I-Kwa" id="Mt1-g7-bbz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventTypePickerView" destination="1rd-7Z-DFL" id="XTl-wt-IgI"/>
+                        <outlet property="orderByBarButton" destination="nub-N3-uUe" id="mkj-pm-7fk"/>
                         <outlet property="tableView" destination="La8-6f-00u" id="LGn-sx-ySH"/>
                     </connections>
                 </viewController>
