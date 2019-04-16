@@ -362,11 +362,13 @@
                         <outlet property="nameLabel" destination="596-kK-peH" id="nuJ-uh-Ak9"/>
                         <outlet property="rsvpButton" destination="xBG-bz-vh2" id="n98-X7-PFc"/>
                         <outlet property="rsvpCountLabel" destination="eak-jM-wan" id="ois-Ew-4dV"/>
+                        <outlet property="showFlyerTapGesture" destination="uz8-f7-Z8Y" id="jId-T7-xKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkT-ub-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="uz8-f7-Z8Y">
                     <connections>
+                        <action selector="flyerTap:" destination="mpD-aA-PZh" id="EPh-sY-Jda"/>
                         <segue destination="zSs-8G-qTD" kind="show" identifier="ShowFlyer" id="WkZ-Rl-oZM"/>
                     </connections>
                 </tapGestureRecognizer>

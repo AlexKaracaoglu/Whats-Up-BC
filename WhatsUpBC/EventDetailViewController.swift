@@ -14,7 +14,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventFlyerImageView: UIImageView!
     
     @IBOutlet weak var rsvpButton: UIBarButtonItem!
-    
+    @IBOutlet var showFlyerTapGesture: UITapGestureRecognizer!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
@@ -43,10 +43,15 @@ class EventDetailViewController: UIViewController {
             self.rsvpCountLabel.text = String(self.event.rsvp)
             self.dateLabel.text = self.event.dateString
             
-            self.event.loadEventPhoto {
-                self.eventFlyerImageView.isUserInteractionEnabled = self.event.flyerExist
-                
-                self.eventFlyerImageView.image = self.event.flyerImage
+            if self.event.flyerExist {
+                self.event.loadEventPhoto {
+                    self.eventFlyerImageView.image = self.event.flyerImage
+                }
+            }
+            else {
+                self.eventFlyerImageView.isUserInteractionEnabled = false
+                self.eventFlyerImageView.isHidden = true
+                self.showFlyerTapGesture.isEnabled = false
             }
         }
         
