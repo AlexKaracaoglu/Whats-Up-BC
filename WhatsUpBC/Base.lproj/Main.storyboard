@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X03-2C-aNw">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X03-2C-aNw">
                                 <rect key="frame" x="16" y="291" width="343" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -30,7 +30,7 @@
                                     <segue destination="x4W-9g-dq8" kind="presentation" id="bhY-Nz-Ocz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMU-f9-Ndu">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMU-f9-Ndu">
                                 <rect key="frame" x="16" y="379" width="343" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -42,7 +42,7 @@
                                     <segue destination="0Tm-5I-Kwa" kind="show" identifier="EventSearch" id="dTF-Vx-lx6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-CX-Ltw">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-CX-Ltw">
                                 <rect key="frame" x="16" y="467" width="343" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -54,7 +54,7 @@
                                     <segue destination="qFe-sp-6hg" kind="show" identifier="ViewRSVPS" id="7p2-ip-wih"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's Up BC!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-UH-EoC">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's Up BC!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-UH-EoC">
                                 <rect key="frame" x="16" y="64" width="343" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="65"/>
@@ -72,6 +72,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addNewEventButton" destination="X03-2C-aNw" id="Umt-Kn-iXb"/>
+                        <outlet property="searchEventsButton" destination="JMU-f9-Ndu" id="V0i-gR-rt9"/>
+                        <outlet property="titleLabel" destination="Bai-UH-EoC" id="BZK-en-mjY"/>
+                        <outlet property="viewRSVPsButton" destination="i8E-CX-Ltw" id="vOf-fQ-9Qg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,11 @@ import GoogleSignIn
 
 class EntryViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var addNewEventButton: UIButton!
+    @IBOutlet weak var viewRSVPsButton: UIButton!
+    @IBOutlet weak var searchEventsButton: UIButton!
+    
     var authUI: FUIAuth!
 
     override func viewDidLoad() {
@@ -46,18 +51,34 @@ class EntryViewController: UIViewController {
             present(authUI.authViewController(), animated: true, completion: nil)
         }
         else {
-            
+            showElements()
         }
         
+    }
+    
+    func hideElements() {
+        addNewEventButton.isHidden = true
+        searchEventsButton.isHidden = true
+        viewRSVPsButton.isHidden = true
+        titleLabel.isHidden = true
+    }
+    
+    func showElements() {
+        addNewEventButton.isHidden = false
+        searchEventsButton.isHidden = false
+        viewRSVPsButton.isHidden = false
+        titleLabel.isHidden = false
     }
     
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
         do {
             try authUI!.signOut()
             print("SUCCESSFULLY SIGNED OUT")
+            hideElements()
             signIn()
         }
         catch {
+            hideElements()
             print("ERROR: COULDNT SIGN OUT")
         }
     }
@@ -78,6 +99,7 @@ extension EntryViewController: FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         if let user = user {
+            showElements()
             print("We signed in with user \(user.email ?? "Unknown email")")
         }
     }
