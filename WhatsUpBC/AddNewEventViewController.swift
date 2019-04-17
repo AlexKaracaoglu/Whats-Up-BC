@@ -19,6 +19,7 @@ class AddNewEventViewController: UIViewController {
     @IBOutlet weak var eventLocationTextField: UITextField!
     @IBOutlet weak var eventHostTextField: UITextField!
     @IBOutlet weak var eventNameTextField: UITextField!
+    
     var imagepicker = UIImagePickerController()
     
     var flyerExist = false
@@ -157,6 +158,13 @@ extension AddNewEventViewController: UIImagePickerControllerDelegate, UINavigati
     
     func cameraOrLibraryAlert() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if flyerExist {
+            let removeAction = UIAlertAction(title: "Remove Flyer", style: .destructive) {_ in
+                self.removeFlyer()
+            }
+            
+            alertController.addAction(removeAction)
+        }
         let cameraAction = UIAlertAction(title: "Camera", style: .default) {_ in
             self.accessCamera()
         }
@@ -168,6 +176,11 @@ extension AddNewEventViewController: UIImagePickerControllerDelegate, UINavigati
         alertController.addAction(photoLibraryAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func removeFlyer() {
+        self.flyerExist = false
+        eventFlyerImageView.image = nil
     }
     
     func accessLibrary() {
