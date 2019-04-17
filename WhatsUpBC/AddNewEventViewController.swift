@@ -35,6 +35,10 @@ class AddNewEventViewController: UIViewController {
         
         eventDescriptionTextView.delegate = self
         
+        eventNameTextField.delegate = self
+        eventHostTextField.delegate = self
+        eventLocationTextField.delegate = self
+        
         eventTagPickerView.dataSource = self
         eventTagPickerView.delegate = self
         
@@ -51,6 +55,27 @@ class AddNewEventViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
+    
+    func missingDataAlert() {
+        let alertMessage = UIAlertController(title: "Missing Data", message: "Please be sure to provide an event name, host, location and description.", preferredStyle: .alert)
+        alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertMessage, animated: true, completion: nil)
+    }
+    
+    func updateMissingDataUI() {
+        if eventDescriptionTextView.text == "" {
+            eventDescriptionTextView.backgroundColor = UIColor.red
+        }
+        if eventHostTextField.text == "" {
+            eventHostTextField.backgroundColor = UIColor.red
+        }
+        if eventNameTextField.text == "" {
+            eventNameTextField.backgroundColor = UIColor.red
+        }
+        if eventLocationTextField.text == "" {
+            eventLocationTextField.backgroundColor = UIColor.red
+        }
+    }
 
     @IBAction func cancelBarButtonPressed(_ sender: UIBarButtonItem) {
         let isPresentingInAddMode = presentingViewController is UINavigationController
@@ -63,36 +88,36 @@ class AddNewEventViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        print("Event Name: \(eventNameTextField.text!)")
-        print("Event Host: \(eventHostTextField.text!)")
-        print("Event Contact: \(Auth.auth().currentUser?.email ?? "Unknown")")
-        print("Event Location: \(eventLocationTextField.text!)")
-//        print("Event Date: \(formatter.string(from: eventDatePicker.date))")
-        print("Event Description: \(eventDescriptionTextView.text!)")
-        print("Event Tag: \(eventTag)")
         
-        let event = Event(name: eventNameTextField.text!,
-                          host: eventHostTextField.text!,
-                          contact: Auth.auth().currentUser?.email ?? "Unknown",
-                          location: eventLocationTextField.text!,
-                          description: eventDescriptionTextView.text!,
-                          tag: eventTag,
-                          rsvp: 0,
-                          dateString: eventDatePicker.date.toString(),
-                          documentID: "",
-                          flyerImage: eventFlyerImageView.image ?? UIImage(),
-                          flyerExist: flyerExist)
+        if eventDescriptionTextView.text == "" || eventHostTextField.text == "" || eventNameTextField.text == "" {
+            updateMissingDataUI()
+            missingDataAlert()
+        }
         
-        event.saveData { success in
-            if success {
-                if event.flyerExist {
-                    event.saveImage { success in
+        else {
+            let event = Event(name: eventNameTextField.text!,
+                              host: eventHostTextField.text!,
+                              contact: Auth.auth().currentUser?.email ?? "Unknown",
+                              location: eventLocationTextField.text!,
+                              description: eventDescriptionTextView.text!,
+                              tag: eventTag,
+                              rsvp: 0,
+                              dateString: eventDatePicker.date.toString(),
+                              documentID: "",
+                              flyerImage: eventFlyerImageView.image ?? UIImage(),
+                              flyerExist: flyerExist)
+            
+            event.saveData { success in
+                if success {
+                    if event.flyerExist {
+                        event.saveImage { success in
+                        }
                     }
+                    self.leaveViewController()
                 }
-                self.leaveViewController()
-            }
-            else {
-                print("COULDNT LEAVE VIEW CONTROLLER")
+                else {
+                    print("COULDNT LEAVE VIEW CONTROLLER")
+                }
             }
         }
         
@@ -108,18 +133,20 @@ class AddNewEventViewController: UIViewController {
     
 }
 
-extension AddNewEventViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor != UIColor( red: CGFloat(61/255.0), green: CGFloat(6/255.0), blue: CGFloat(3/255.0), alpha: CGFloat(1.0) )  {
-            textView.text = nil
-            textView.textColor = UIColor( red: CGFloat(61/255.0), green: CGFloat(6/255.0), blue: CGFloat(3/255.0), alpha: CGFloat(1.0) )
+extension AddNewEventViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.backgroundColor == UIColor.red  {
+            textField.text = nil
+            textField.backgroundColor = UIColor.white
         }
     }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Description"
-            textView.textColor = UIColor.lightGray
+}
+
+extension AddNewEventViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.backgroundColor == UIColor.red  {
+            textView.text = nil
+            textView.backgroundColor = UIColor.white
         }
     }
 }
