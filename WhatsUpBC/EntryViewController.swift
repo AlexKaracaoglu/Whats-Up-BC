@@ -104,5 +104,20 @@ extension EntryViewController: FUIAuthDelegate {
         }
     }
     
+    func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
+        let loginImage = UIImage(named: "logo")
+        let loginViewController = FUIAuthPickerViewController(authUI: authUI)
+        loginViewController.view.backgroundColor = UIColor.white
+        let marginInsets: CGFloat = 16
+        let imageHeight: CGFloat = (loginImage?.size.height)!
+        let imageY = self.view.center.y - (imageHeight/1.5)
+        let logoFrame = CGRect(x: self.view.frame.origin.x + marginInsets, y: imageY, width: self.view.frame.width - (marginInsets*2), height: imageHeight)
+        let logoImageView = UIImageView(frame: logoFrame)
+        logoImageView.image = loginImage
+        logoImageView.contentMode = .scaleAspectFit
+        loginViewController.view.addSubview(logoImageView)
+        return loginViewController
+    }
+    
 }
 
