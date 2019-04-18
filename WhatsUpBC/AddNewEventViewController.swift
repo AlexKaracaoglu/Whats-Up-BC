@@ -57,24 +57,31 @@ class AddNewEventViewController: UIViewController {
     }
     
     func missingDataAlert() {
-        let alertMessage = UIAlertController(title: "Missing Data", message: "Please be sure to provide an event name, host, location and description.", preferredStyle: .alert)
+        var message = makeMessageAndUpdateUI()
+        let alertMessage = UIAlertController(title: "Missing Data", message: "Please Provide The Following Required Fields:\(message)", preferredStyle: .alert)
         alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertMessage, animated: true, completion: nil)
     }
     
-    func updateMissingDataUI() {
-        if eventDescriptionTextView.text == "" {
-            eventDescriptionTextView.backgroundColor = UIColor.red
+    func makeMessageAndUpdateUI() -> String {
+        var message = "\n"
+        if eventNameTextField.text == "" {
+            eventNameTextField.backgroundColor = UIColor.red
+            message.append("Name\n")
         }
         if eventHostTextField.text == "" {
             eventHostTextField.backgroundColor = UIColor.red
-        }
-        if eventNameTextField.text == "" {
-            eventNameTextField.backgroundColor = UIColor.red
+            message.append("Host\n")
         }
         if eventLocationTextField.text == "" {
             eventLocationTextField.backgroundColor = UIColor.red
+            message.append("Location\n")
         }
+        if eventDescriptionTextView.text == "" {
+            eventDescriptionTextView.backgroundColor = UIColor.red
+            message.append("Description\n")
+        }
+        return String(message.dropLast())
     }
 
     @IBAction func cancelBarButtonPressed(_ sender: UIBarButtonItem) {
@@ -90,7 +97,6 @@ class AddNewEventViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         
         if eventDescriptionTextView.text == "" || eventHostTextField.text == "" || eventNameTextField.text == "" {
-            updateMissingDataUI()
             missingDataAlert()
         }
         
