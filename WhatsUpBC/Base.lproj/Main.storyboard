@@ -521,6 +521,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K8R-YR-MnC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -539,6 +547,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z9n-5u-2xY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -623,4 +639,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="u7a-ON-FHM"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
