@@ -107,12 +107,12 @@ class EventSearchViewController: UIViewController {
     
     
     @IBAction func orderByBarButtonPressed(_ sender: UIBarButtonItem) {
-        if orderByBarButton.title == "Order By Popularity" {
+        if orderByBarButton.title == "Order By RSVP" {
             orderByBarButton.title = "Order By Date"
             sortEvents()
         }
         else {
-            orderByBarButton.title = "Order By Popularity"
+            orderByBarButton.title = "Order By RSVP"
             sortEvents()
         }
     }

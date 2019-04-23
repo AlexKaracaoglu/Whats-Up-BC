@@ -1,16 +1,15 @@
 //
-//  AddNewEventViewController.swift
+//  AddNewEventTableViewController.swift
 //  WhatsUpBC
 //
-//  Created by Alex Karacaoglu on 4/6/19.
+//  Created by Alex Karacaoglu on 4/22/19.
 //  Copyright © 2019 Alex Karacaoglu. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class AddNewEventViewController: UIViewController {
-    
+class AddNewEventTableViewController: UITableViewController {
     
     @IBOutlet weak var eventDatePicker: UIDatePicker!
     @IBOutlet weak var eventFlyerImageView: UIImageView!
@@ -57,7 +56,7 @@ class AddNewEventViewController: UIViewController {
     }
     
     func missingDataAlert() {
-        var message = makeMessageAndUpdateUI()
+        let message = makeMessageAndUpdateUI()
         let alertMessage = UIAlertController(title: "Missing Data", message: "Please Provide The Following Required Fields:\(message)", preferredStyle: .alert)
         alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertMessage, animated: true, completion: nil)
@@ -83,7 +82,7 @@ class AddNewEventViewController: UIViewController {
         }
         return String(message.dropLast())
     }
-
+    
     @IBAction func cancelBarButtonPressed(_ sender: UIBarButtonItem) {
         let isPresentingInAddMode = presentingViewController is UINavigationController
         if isPresentingInAddMode {
@@ -94,12 +93,19 @@ class AddNewEventViewController: UIViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.textLabel?.textColor = UIColor( red: CGFloat(174/255.0), green: CGFloat(158/255.0), blue: CGFloat(114/255.0), alpha: CGFloat(1.0) )
+            header.contentView.backgroundColor = UIColor( red: CGFloat(61/255.0), green: CGFloat(6/255.0), blue: CGFloat(3/255.0), alpha: CGFloat(1.0) )
+        }
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         
         if eventDescriptionTextView.text == "" || eventHostTextField.text == "" || eventNameTextField.text == "" {
             missingDataAlert()
         }
-        
+            
         else {
             let event = Event(name: eventNameTextField.text!,
                               host: eventHostTextField.text!,
@@ -131,15 +137,12 @@ class AddNewEventViewController: UIViewController {
     }
     
     @IBAction func flyerTapped(_ sender: UITapGestureRecognizer) {
-    }
-    
-    @IBAction func addFlyerPressed(_ sender: UIButton) {
         cameraOrLibraryAlert()
     }
     
 }
 
-extension AddNewEventViewController: UITextFieldDelegate {
+extension AddNewEventTableViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.backgroundColor == UIColor.red  {
             textField.text = nil
@@ -148,7 +151,7 @@ extension AddNewEventViewController: UITextFieldDelegate {
     }
 }
 
-extension AddNewEventViewController: UITextViewDelegate {
+extension AddNewEventTableViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.backgroundColor == UIColor.red  {
             textView.text = nil
@@ -157,7 +160,7 @@ extension AddNewEventViewController: UITextViewDelegate {
     }
 }
 
-extension AddNewEventViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension AddNewEventTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -176,7 +179,7 @@ extension AddNewEventViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     
 }
 
-extension AddNewEventViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddNewEventTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
