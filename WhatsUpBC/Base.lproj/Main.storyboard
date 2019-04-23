@@ -18,10 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X03-2C-aNw">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X03-2C-aNw">
                                 <rect key="frame" x="16" y="291" width="343" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="pat-XT-DCj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Add New Event">
                                     <color key="titleColor" red="0.23789146542549133" green="0.024070741608738899" blue="0.011749564670026302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -30,10 +32,12 @@
                                     <segue destination="Mvh-i6-16h" kind="presentation" id="Qq6-GQ-Zgi"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMU-f9-Ndu">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMU-f9-Ndu">
                                 <rect key="frame" x="16" y="379" width="343" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="rlp-Go-POw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Search For Events">
                                     <color key="titleColor" red="0.23789146542549133" green="0.024070741608738899" blue="0.011749564670026302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -42,27 +46,45 @@
                                     <segue destination="0Tm-5I-Kwa" kind="show" identifier="EventSearch" id="dTF-Vx-lx6"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-CX-Ltw">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-CX-Ltw">
                                 <rect key="frame" x="16" y="467" width="343" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="uX8-8c-Mpb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="View Events You RSVP'd To">
+                                <state key="normal" title="Your Upcoming Events">
                                     <color key="titleColor" red="0.23789146542549133" green="0.024070741608738899" blue="0.011749564670026302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <segue destination="qFe-sp-6hg" kind="show" identifier="ViewRSVPS" id="7p2-ip-wih"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's Up BC!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-UH-EoC">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Up BC!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-UH-EoC">
                                 <rect key="frame" x="16" y="64" width="343" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="sXk-i6-0TQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="65"/>
                                 <color key="textColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.23789146542549133" green="0.024070741608738899" blue="0.011749564670026302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="JMU-f9-Ndu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="310-IO-EVb"/>
+                            <constraint firstItem="X03-2C-aNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BUz-rT-0cQ"/>
+                            <constraint firstItem="JMU-f9-Ndu" firstAttribute="top" secondItem="X03-2C-aNw" secondAttribute="bottom" constant="8" id="KE4-Kp-ja2"/>
+                            <constraint firstAttribute="trailing" secondItem="Bai-UH-EoC" secondAttribute="trailing" constant="16" id="L3b-qk-DwE"/>
+                            <constraint firstAttribute="trailing" secondItem="JMU-f9-Ndu" secondAttribute="trailing" constant="16" id="PpZ-9p-TJq"/>
+                            <constraint firstItem="i8E-CX-Ltw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fkn-dQ-78d"/>
+                            <constraint firstItem="Bai-UH-EoC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gdq-7y-xja"/>
+                            <constraint firstAttribute="trailing" secondItem="i8E-CX-Ltw" secondAttribute="trailing" constant="16" id="kRf-w9-Kcn"/>
+                            <constraint firstItem="Bai-UH-EoC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pTT-dZ-1TY"/>
+                            <constraint firstItem="X03-2C-aNw" firstAttribute="top" secondItem="Bai-UH-EoC" secondAttribute="bottom" constant="27" id="qSv-45-Rhf"/>
+                            <constraint firstItem="i8E-CX-Ltw" firstAttribute="top" secondItem="JMU-f9-Ndu" secondAttribute="bottom" constant="8" id="sfk-KW-zaC"/>
+                            <constraint firstAttribute="trailing" secondItem="X03-2C-aNw" secondAttribute="trailing" constant="16" id="tEH-go-gmT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="R4o-mZ-qtp">
@@ -91,14 +113,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rd-7Z-DFL">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rd-7Z-DFL">
                                 <rect key="frame" x="0.0" y="64" width="225" height="157"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="A5r-u8-Nlx"/>
+                                    <constraint firstAttribute="height" constant="157" id="p31-xN-lxx"/>
+                                </constraints>
                             </pickerView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="La8-6f-00u">
-                                <rect key="frame" x="0.0" y="222" width="375" height="445"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="La8-6f-00u">
+                                <rect key="frame" x="0.0" y="221" width="375" height="446"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="g4C-NK-IJi" customClass="EventSearchTableViewCell" customModule="WhatsUpBC" customModuleProvider="target">
@@ -138,10 +162,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoQ-ez-Gtd">
-                                <rect key="frame" x="233" y="124" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoQ-ez-Gtd">
+                                <rect key="frame" x="233" y="124" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lVN-cY-jlg"/>
+                                </constraints>
                                 <state key="normal" title="Search For Events">
                                     <color key="titleColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -151,6 +177,22 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="qoQ-ez-Gtd" firstAttribute="leading" secondItem="1rd-7Z-DFL" secondAttribute="trailing" constant="8" id="2a3-za-7xT"/>
+                            <constraint firstItem="1rd-7Z-DFL" firstAttribute="top" secondItem="ehf-sq-qga" secondAttribute="top" id="64N-5f-7u9"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="trailing" secondItem="ehf-sq-qga" secondAttribute="trailing" id="6sJ-eG-Gdl"/>
+                            <constraint firstItem="ehf-sq-qga" firstAttribute="trailing" secondItem="qoQ-ez-Gtd" secondAttribute="trailing" constant="8" id="ELF-Lc-Esq"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="trailing" secondItem="ehf-sq-qga" secondAttribute="trailing" id="EV5-yT-P7j"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="top" secondItem="qoQ-ez-Gtd" secondAttribute="bottom" constant="67" id="Hu7-Vf-i0a"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="leading" secondItem="ehf-sq-qga" secondAttribute="leading" id="JFO-rE-hPG"/>
+                            <constraint firstItem="qoQ-ez-Gtd" firstAttribute="top" secondItem="ehf-sq-qga" secondAttribute="top" constant="60" id="Lkt-HM-6We"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="bottom" secondItem="ehf-sq-qga" secondAttribute="bottom" id="NMr-Dj-PwD"/>
+                            <constraint firstItem="1rd-7Z-DFL" firstAttribute="leading" secondItem="ehf-sq-qga" secondAttribute="leading" id="PgC-92-E4N"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="top" secondItem="1rd-7Z-DFL" secondAttribute="bottom" id="e6Y-gx-W4R"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="leading" secondItem="ehf-sq-qga" secondAttribute="leading" id="jNf-se-But"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="bottom" secondItem="ehf-sq-qga" secondAttribute="bottom" id="mxO-9P-GPh"/>
+                            <constraint firstItem="La8-6f-00u" firstAttribute="top" secondItem="1rd-7Z-DFL" secondAttribute="bottom" id="xqE-D0-5xB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ehf-sq-qga"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jrz-RF-F50">
@@ -168,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6f-I1-nye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2116" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2116" y="25.862068965517242"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="8ad-9T-Uh4">
@@ -289,13 +331,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-CL-D5f">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-CL-D5f">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="1CM-CL-D5f" firstAttribute="leading" secondItem="ufn-7V-27b" secondAttribute="leading" id="o34-xK-xRH"/>
+                            <constraint firstItem="1CM-CL-D5f" firstAttribute="bottom" secondItem="ufn-7V-27b" secondAttribute="bottom" id="r1K-9N-nhP"/>
+                            <constraint firstItem="1CM-CL-D5f" firstAttribute="top" secondItem="ufn-7V-27b" secondAttribute="top" id="umK-a0-6Yv"/>
+                            <constraint firstItem="1CM-CL-D5f" firstAttribute="trailing" secondItem="ufn-7V-27b" secondAttribute="trailing" id="ywy-oe-8UD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ufn-7V-27b"/>
                     </view>
                     <connections>
@@ -555,9 +602,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p54-hu-e00">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p54-hu-e00">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="QV2-3l-0Su" customClass="ShowRSVPSTableViewCell" customModule="WhatsUpBC" customModuleProvider="target">
@@ -599,6 +645,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="p54-hu-e00" firstAttribute="leading" secondItem="BLB-65-86d" secondAttribute="leading" id="6qP-Je-6pU"/>
+                            <constraint firstItem="p54-hu-e00" firstAttribute="top" secondItem="BLB-65-86d" secondAttribute="top" id="Ju4-WE-I6F"/>
+                            <constraint firstItem="p54-hu-e00" firstAttribute="bottom" secondItem="BLB-65-86d" secondAttribute="bottom" id="RBL-IN-8hF"/>
+                            <constraint firstItem="p54-hu-e00" firstAttribute="trailing" secondItem="BLB-65-86d" secondAttribute="trailing" id="g5W-9q-gf8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BLB-65-86d"/>
                     </view>
                     <connections>
@@ -641,10 +693,10 @@
     </scenes>
     <resources>
         <image name="logo" width="300" height="273"/>
-        <image name="star-empty" width="158" height="150"/>
+        <image name="star-empty" width="75.839996337890625" height="76.800003051757812"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u7a-ON-FHM"/>
+        <segue reference="ofX-UI-hBI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
