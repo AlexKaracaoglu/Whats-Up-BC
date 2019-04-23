@@ -516,7 +516,7 @@
                                                     <color key="backgroundColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="tintColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </pickerView>
-                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="b6N-ER-p40">
+                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flyer" translatesAutoresizingMaskIntoConstraints="NO" id="b6N-ER-p40">
                                                     <rect key="frame" x="187" y="-1" width="188" height="163"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.23921568630000001" green="0.023529411760000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -692,11 +692,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="300" height="273"/>
+        <image name="flyer" width="144" height="144"/>
         <image name="star-empty" width="75.839996337890625" height="76.800003051757812"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ofX-UI-hBI"/>
+        <segue reference="u7a-ON-FHM"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.68421047930000001" green="0.61855667830000005" blue="0.44702583550000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
