@@ -157,7 +157,9 @@ extension EventSearchViewController: UITableViewDelegate, UITableViewDataSource 
         if rsvpList.contains(events.eventArray[sender.view.tag].documentID) {
             rsvp.deleteData { success in
                 self.deleteFromRSVPList(element: rsvp.documentID)
-                self.events.eventArray[self.view.tag].removeRSVP() {
+                self.events.eventArray[sender.view.tag].removeRSVP() {
+                    self.sortEvents()
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -165,12 +167,11 @@ extension EventSearchViewController: UITableViewDelegate, UITableViewDataSource 
             
             rsvp.saveData { success in
                 self.events.eventArray[sender.view.tag].addRSVP() {
+                    self.sortEvents()
+                    self.tableView.reloadData()
                 }
             }
         }
-        sortEvents()
-        tableView.reloadData()
-
     }
     
     func deleteFromRSVPList(element: String) {
