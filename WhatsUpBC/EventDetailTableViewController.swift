@@ -1,43 +1,40 @@
 //
-//  EventDetailViewController.swift
+//  EventDetailTableViewController.swift
 //  WhatsUpBC
 //
-//  Created by Alex Karacaoglu on 4/6/19.
+//  Created by Alex Karacaoglu on 4/24/19.
 //  Copyright © 2019 Alex Karacaoglu. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class EventDetailViewController: UIViewController {
-
-    @IBOutlet weak var eventFlyerImageView: UIImageView!
+class EventDetailTableViewController: UITableViewController {
     
+    @IBOutlet weak var eventFlyerImageView: UIImageView!
     @IBOutlet weak var rsvpButton: UIBarButtonItem!
     @IBOutlet var showFlyerTapGesture: UITapGestureRecognizer!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var rsvpCountLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var dateLabel: UILabel!
     
     var event = Event()
     var tag = ""
     var rsvps = RSVPS()
     var rsvpList: [String] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         event.loadEventFromTagAndID {
-                if self.rsvpList.contains(self.event.documentID) {
-                    self.rsvpButton.title = "UN-RSVP"
-                }
-        
+            if self.rsvpList.contains(self.event.documentID) {
+                self.rsvpButton.title = "UN-RSVP"
+            }
+            
             self.nameLabel.text = self.event.name
-            self.descriptionLabel.text = self.event.description
+            self.descriptionTextView.text = self.event.description
             self.hostLabel.text = self.event.host
             self.locationLabel.text = self.event.location
             self.rsvpCountLabel.text = String(self.event.rsvp)
@@ -74,6 +71,12 @@ class EventDetailViewController: UIViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.textLabel?.textColor = UIColor( red: CGFloat(61/255.0), green: CGFloat(6/255.0), blue: CGFloat(3/255.0), alpha: CGFloat(1.0) )
+            header.contentView.backgroundColor = UIColor( red: CGFloat(174/255.0), green: CGFloat(158/255.0), blue: CGFloat(114/255.0), alpha: CGFloat(1.0) )
+        }
+    }
     
     @IBAction func rsvp(_ sender: UIBarButtonItem) {
         let rsvp = RSVP(name: event.name, date: event.dateString, documentID: event.documentID, user: self.rsvps.user, tag: event.tag)
@@ -95,5 +98,5 @@ class EventDetailViewController: UIViewController {
             }
         }
     }
-    
+
 }

@@ -75,7 +75,7 @@ class EventSearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowEventDetail" {
-            let destination = segue.destination as! EventDetailViewController
+            let destination = segue.destination as! EventDetailTableViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             destination.event = events.eventArray[selectedIndexPath.row]
             destination.tag = events.tag

@@ -32,7 +32,7 @@ class ShowRSVPSViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowEventDetail" {
-            let destination = segue.destination as! EventDetailViewController
+            let destination = segue.destination as! EventDetailTableViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             
             var event = Event()
