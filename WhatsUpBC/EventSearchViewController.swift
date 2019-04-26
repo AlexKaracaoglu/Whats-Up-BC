@@ -15,7 +15,7 @@ class EventSearchViewController: UIViewController {
     @IBOutlet weak var orderByBarButton: UIBarButtonItem!
     @IBOutlet weak var eventTypePickerView: UIPickerView!
     
-    let tags = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Fundraiser", "Other"]
+    let tags = Tags().tagArray
     
     var eventTag = "Speech"
     

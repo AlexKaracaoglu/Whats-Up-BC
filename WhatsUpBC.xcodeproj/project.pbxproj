@@ -20,6 +20,7 @@
 		BF0443B122610F510011B919 /* EventSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0443B022610F510011B919 /* EventSearchTableViewCell.swift */; };
 		BF1231AD226E796B00180187 /* AddNewEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1231AC226E796B00180187 /* AddNewEventTableViewController.swift */; };
 		BF1231AF2270EA0700180187 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1231AE2270EA0700180187 /* EventDetailTableViewController.swift */; };
+		BF1231B12272A2C600180187 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1231B02272A2C600180187 /* Tags.swift */; };
 		BF4C5BFC2259901F00316F7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5BFB2259901F00316F7A /* AppDelegate.swift */; };
 		BF4C5BFE2259901F00316F7A /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C5BFD2259901F00316F7A /* EntryViewController.swift */; };
 		BF4C5C012259901F00316F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4C5BFF2259901F00316F7A /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		BF0443B022610F510011B919 /* EventSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchTableViewCell.swift; sourceTree = "<group>"; };
 		BF1231AC226E796B00180187 /* AddNewEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventTableViewController.swift; sourceTree = "<group>"; };
 		BF1231AE2270EA0700180187 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
+		BF1231B02272A2C600180187 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		BF4C5BF82259901F00316F7A /* WhatsUpBC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsUpBC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C5BFB2259901F00316F7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF4C5BFD2259901F00316F7A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
@@ -111,15 +113,16 @@
 				BF1231AC226E796B00180187 /* AddNewEventTableViewController.swift */,
 				BF1231AE2270EA0700180187 /* EventDetailTableViewController.swift */,
 				BF0443AC225F93C50011B919 /* FlyerViewController.swift */,
+				BF1231B02272A2C600180187 /* Tags.swift */,
 				BF9AD6F7225E7809002E0CA9 /* Event.swift */,
 				BF044396225E88980011B919 /* Events.swift */,
 				BF04439C225E95650011B919 /* RSVPS.swift */,
 				BF0443A0225EAD370011B919 /* RSVP.swift */,
-				BF4C5BFF2259901F00316F7A /* Main.storyboard */,
 				BF0443AE22610D150011B919 /* EventSearchViewController.swift */,
 				BF0443B022610F510011B919 /* EventSearchTableViewCell.swift */,
 				BF04439E225E9BE10011B919 /* ShowRSVPSViewController.swift */,
 				BF0443A2225EB2ED0011B919 /* ShowRSVPSTableViewCell.swift */,
+				BF4C5BFF2259901F00316F7A /* Main.storyboard */,
 				BF0443A8225F8D0E0011B919 /* Date+toString.swift */,
 				BF0443AA225F8D1F0011B919 /* String+toDate.swift */,
 				BF4C5C022259902100316F7A /* Assets.xcassets */,
@@ -322,6 +325,7 @@
 				BF0443AB225F8D1F0011B919 /* String+toDate.swift in Sources */,
 				BF9AD6F8225E7809002E0CA9 /* Event.swift in Sources */,
 				BF4C5BFE2259901F00316F7A /* EntryViewController.swift in Sources */,
+				BF1231B12272A2C600180187 /* Tags.swift in Sources */,
 				BF0443A1225EAD370011B919 /* RSVP.swift in Sources */,
 				BF4C5BFC2259901F00316F7A /* AppDelegate.swift in Sources */,
 				BF0443A3225EB2ED0011B919 /* ShowRSVPSTableViewCell.swift in Sources */,
