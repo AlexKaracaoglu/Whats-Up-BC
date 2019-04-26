@@ -23,7 +23,7 @@ class AddNewEventTableViewController: UITableViewController {
     
     var flyerExist = false
     
-    var tags = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Other"]
+    let tags = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Fundraiser", "Other"]
     
     var eventTag = "Speech"
     

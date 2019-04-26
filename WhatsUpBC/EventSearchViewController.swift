@@ -15,7 +15,7 @@ class EventSearchViewController: UIViewController {
     @IBOutlet weak var orderByBarButton: UIBarButtonItem!
     @IBOutlet weak var eventTypePickerView: UIPickerView!
     
-    let tags = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Other"]
+    let tags = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Fundraiser", "Other"]
     
     var eventTag = "Speech"
     
@@ -98,6 +98,8 @@ class EventSearchViewController: UIViewController {
             self.title = "Volunteering"
         case "Activity":
             self.title = "Activities"
+        case "Fundraiser":
+            self.title = "Fundraisers"
         case "Other":
             self.title = "Other Events"
         default:
