@@ -95,8 +95,8 @@ extension ShowRSVPSViewController: UITableViewDelegate, UITableViewDataSource {
         rsvpList = rsvpList.filter() { $0 != element }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 80
+//    }
     
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 struct Tags {
-    let tagArray = ["Speech", "Panel", "Workshop", "Show", "Volunteering", "Activity", "Fundraiser", "Other"]
+    let tagArray = ["Speeches", "Panels", "Workshops", "Shows", "Volunteering", "Activities", "Fundraisers", "Other"]
 }

@@ -25,7 +25,7 @@ class AddNewEventTableViewController: UITableViewController {
     
     let tags = Tags().tagArray
     
-    var eventTag = "Speech"
+    var eventTag = "Speeches"
     
     override func viewDidLoad() {
         super.viewDidLoad()

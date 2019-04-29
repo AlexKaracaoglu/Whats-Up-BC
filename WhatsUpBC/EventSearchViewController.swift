@@ -17,7 +17,7 @@ class EventSearchViewController: UIViewController {
     
     let tags = Tags().tagArray
     
-    var eventTag = "Speech"
+    var eventTag = "Speeches"
     
     var rsvpList: [String] = []
     
@@ -85,26 +85,7 @@ class EventSearchViewController: UIViewController {
     }
     
     func setTitle() {
-        switch events.tag {
-        case "Speech":
-            self.title = "Speeches"
-        case "Panel":
-            self.title = "Panels"
-        case "Workshop":
-            self.title = "Workshops"
-        case "Show":
-            self.title = "Shows"
-        case "Volunteering":
-            self.title = "Volunteering"
-        case "Activity":
-            self.title = "Activities"
-        case "Fundraiser":
-            self.title = "Fundraisers"
-        case "Other":
-            self.title = "Other Events"
-        default:
-            self.title = "How did you get here?"
-        }
+        self.title = events.tag
     }
     
     
